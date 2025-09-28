@@ -40,94 +40,6 @@
     ]
   },
   {
-    "objectID": "posts/01-transformer/Transformer.html",
-    "href": "posts/01-transformer/Transformer.html",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "",
-    "text": "Self-attention, sometimes called intra-attention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence. Self-attention has been used successfully in a variety of tasks including reading comprehension, abstractive summarization, textual entailment and learning task-independent sentence representations  Attention_is_all_you_need, p.2  THis\n\n\n\n\n Back to top",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/04-clip/CLIP.html",
-    "href": "posts/04-clip/CLIP.html",
-    "title": "04: Learning Transferable Visual Models From Natural Language Supervision(CLIP)",
-    "section": "",
-    "text": "1 CLIP\nThis is the link to the Vision-Transformer\nThis is another link to the Transformer\nTHis is link to the Swin-Transformer\n\n\n2 Summary\n\n\n3 Key Concepts\n\n\n4 Q & A\n\n\n5 扩展\n\n\n\n\n Back to top",
-    "crumbs": [
-      "04 Clip",
-      "04: Learning Transferable Visual Models From Natural Language Supervision(**CLIP**)"
-    ]
-  },
-  {
-    "objectID": "posts/03-swin-transformer/03-swin-transformer.html",
-    "href": "posts/03-swin-transformer/03-swin-transformer.html",
-    "title": "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
-    "section": "",
-    "text": "在阅读Swin Transformer之前，我们回顾一下Vision Transformer是什么。 ViT 在处理图像时，会将整张图像分割成固定大小的patch，并进行global self-attention的计算，从而捕捉图像中的全局信息。然而，这种方法存在两个核心问题：\n为了解决这些问题，Swin Transformer (Liu et al. 2021) 提出了一种新的架构，它通过引入层次化的特征表示和移动窗口机制，来有效地捕捉图像中的局部和全局信息。Swin Transformer 的主要贡献是：\n接下来，我们来详细介绍 Swin Transformer 的架构和关键技术。",
-    "crumbs": [
-      "03 Swin Transformer",
-      "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/03-swin-transformer/03-swin-transformer.html#swin-transformer-架构",
-    "href": "posts/03-swin-transformer/03-swin-transformer.html#swin-transformer-架构",
-    "title": "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
-    "section": "1 Swin Transformer 架构",
-    "text": "1 Swin Transformer 架构\n\n\n\n\n\n\nFigure 1: The Swin Transformer Architecture\n\n\n\n如图 Figure 1 所示，Swin Transformer 的架构由以下几个主要部分组成：\n\nPatch Partition: 将输入图像分割成固定大小的patch，类似于 ViT。\nPatch Merging （图中红色部分）: 在每个阶段通过合并相邻的patch, 逐步减少token数量，构建层次化的特征表示。通过将相邻的patch进行拼接和线性变换，减少特征图的分辨率，同时增加通道数（图中 蓝色 部分）。\nWindow-based Multi-head Self Attention (W-MSA) （图中橙色部分）: 在固定大小的非重叠窗口内进行自注意力操作，将复杂度从 \\(O(( \\frac{HW}{P^2})^2)\\) 降到 \\(O(M^2 \\cdot \\frac{HW}{M^2}) = O(HW \\cdot M^2)\\)，其中 \\(M\\) 是窗口大小.\nShifted Window Multi-head Self Attention (SW-MSA) （图中橙色部分）: 通过在相邻层之间移动窗口位置，增强了模型的局部和全局信息捕捉能力。\n\n\n1.1 Patch Partition\n假设我们有一个输入图像 \\(X\\)，其大小为 \\(H \\times W \\times 3\\)，其中 \\(H\\) 是高度，\\(W\\) 是宽度，\\(3\\) 是通道数。我们将图像分割成大小为 \\(P \\times P\\) 的patches, 之后将这些raw pixel concentration 在一起，就得到了一个 token。 假设\\(P=4\\)，每个token的大小为 \\(4 \\times 4 \\times 3 = 48\\), 总共有 \\(\\frac{H}{4} \\times \\frac{W}{4}\\) 个token。\n\n\n1.2 Linear Embedding\n在将图像分割成patches后，我们需要将每个patch转换为一个向量表示。这个过程称为线性嵌入（Linear Embedding）。具体来说，我们将每个patch展平为一个向量，并通过一个线性变换（通常是一个全连接层）将其映射到一个更高维的空间中。这个就是在 Stage 1 Figure 1 中的 红色 部分。\n\n\n1.3 Patch Merging\n在每个阶段，Swin Transformer 通过合并相邻的patch来逐步减少token数量，构建层次化的特征表示。具体来说，在每个阶段，我们将相邻的patch进行拼接和线性变换，减少特征图的分辨率，同时增加通道数。这个过程称为 Patch Merging。假设在 Stage 1 中，我们有一个大小为 \\(H \\times W \\times C\\) 的特征图，其中 \\(C\\) 是通道数。通过 Patch Merging，我们将特征图的大小减少为 \\(\\frac{H}{2} \\times \\frac{W}{2} \\times 2C\\)，其中 \\(2C\\) 是合并后的通道数。\n\nTo produce a hierarchical representation, the number of tokens is reduced by patch merging layers as the network gets deeper. The first patch merging layer concatenates the features of each group of 2 × 2 neighboring patches, and applies a linear layer on the 4C-dimensional concatenated features. This reduces the number of tokens by a multiple of 2 × 2 = 4 (2× downsampling of resolution), and the output dimension is set to 2C.\n\n总的来说，Patch Merging 就是 Patch Partition + Linear Embedding 的组合。它通过将相邻的patch进行拼接和线性变换，减少特征图的分辨率，同时增加通道数，从而构建层次化的特征表示。\n\n\n1.4 Window-based Multi-head Self Attention (W-MSA)\n接下来，就到了Swin-Transformer的核心部分：窗口自注意力（Window-based Multi-head Self Attention, W-MSA）。在这个阶段，我们将特征图划分为固定大小的非重叠窗口，并在每个窗口内进行自注意力计算。具体来说，假设我们有一个大小为 \\(H \\times W \\times C\\) 的特征图，我们将其划分为大小为 \\(M \\times M\\) 的窗口，其中 \\(M\\) 是窗口大小。然后，在每个窗口内，我们计算自注意力。\n\n\n\n\n\n\nFigure 2: Window-based Multi-head Self Attention\n\n\n\n如图 Figure 2 所示，W-MSA 的Attention计算方式与ViT类似，但它只在每个窗口内进行计算，而不是在整个图像上进行全局计算。这种方法大大减少了计算复杂度，从 \\(O(( \\frac{HW}{P^2})^2)\\) 降到 \\(O(M^2 \\cdot \\frac{HW}{M^2}) = O(HW \\cdot M^2)\\)，其中 \\(M\\) 是窗口大小。\n我们可以看到，不同窗口之间的Attention是独立的，因此我们可以并行计算每个窗口的Attention，这样可以大大提高计算效率。\n\n\n1.5 Shifted Window Multi-head Self Attention (SW-MSA)\nW-MSA虽然在每个窗口内进行了自注意力计算，但它仍然存在一个问题：相邻窗口之间的信息无法直接传递。为了解决这个问题，Swin Transformer 引入了移动窗口机制（Shifted Window Multi-head Self Attention, SW-MSA）。具体来说，在每个阶段，Swin Transformer 会将窗口的位置移动一个固定的步幅，然后再进行自注意力计算。这样，相邻窗口之间就可以通过重叠区域进行信息传递，从而增强了模型的局部和全局信息捕捉能力。\n\n\n\n\n\n\nFigure 3: Shifted Window Multi-head Self Attention\n\n\n\n但是要如何实现这个Shifted Attention呢？ 其中一种方法是，将特征图进行padding，然后将窗口划分为大小为 \\(M \\times M\\) 的非重叠窗口。然后，在每个窗口内进行自注意力计算。\n\nA naive solution is to pad the smaller windows to a size of M × M and mask out the padded values when computing attention.\n\n\n\n\n\n\n\n\n\n\nIllustration of Padding\n\n\n\n\n\n\n\nIllustration of Padding\n\n\n\n\n\n\nFigure 4\n\n\n\n\n这种方法虽然可以实现移动窗口机制，但会增加计算复杂度。Swin Transformer 采用了一种更高效的方式，通过 cyclic shift 来实现窗口的移动。这种可以在不增加窗口数量的情况下，实现窗口的移动，从而减少计算复杂度。不过需要注意的是，这种方式会将一些窗口的消息混淆，因此需要在计算自注意力时进行mask操作，以确保每个窗口只关注自己的区域。具体的实现方式可以参考接下来的 PyTorch 实现部分。\n\n\n1.6 Position Embedding\nTransformer 模型通常需要位置编码（Position Embedding）来捕捉输入序列中元素的位置信息。Transformer是用来 sin cos 函数来生成位置编码的。使用 learned position embedding 的方式来生成位置编码。Swin Transformer使用了第三种方式， relative position embedding。它通过计算相对位置来生成位置编码，这样可以更好地捕捉输入序列中元素之间的相对关系。具体的\n\\[\n\\text{Attention}(Q, K, V) = \\mathrm{SoftMax}\\left(\\frac{QK^\\top}{\\sqrt{d}} + B\\right)V\n\\]\n其中B是相对位置编码矩阵。这个矩阵的大小为 \\(M^2 \\times M^2\\)，其中 \\(M\\) 是窗口大小。对于每个窗口的元素，他们的相对位置是 \\([−M + 1, M − 1]\\)。 因此我们可以将一个较小尺寸的偏置矩阵 \\(\\hat{B} \\in \\mathbb{R}^{(2M - 1) \\times (2M - 1)}\\) 参数化，并且矩阵 \\(B\\) 中的值是从 \\(\\hat{B}\\) 中取出的。\n\n\n1.7 Others\nSwin Transformer 还引入了一些其他的技术来提高模型的性能和效率，例如：\n\nLayer Normalization (Pre-Norm): 在每个阶段的输入和输出之间使用 Layer Normalization 来稳定训练过程。\nDropout: 在自注意力计算和全连接层中使用 Dropout 来防止过拟合。\nResidual Connection: 在每个阶段的输入和输出之间使用残差连接来加速收敛。\nMLP: 在每个阶段的输出后使用多层感知机（MLP）来进一步处理特征。\nActivation Function: 使用 GELU 激活函数来提高模型的非线性表达能力。\n\n在这里就不过多赘述了，感兴趣的同学可以参考原论文 (Liu et al. 2021)， 或者我的前两篇文章：\n\n01 : Transformer\n02 : Vision Transformer",
-    "crumbs": [
-      "03 Swin Transformer",
-      "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/03-swin-transformer/03-swin-transformer.html#pytorch-implementation",
-    "href": "posts/03-swin-transformer/03-swin-transformer.html#pytorch-implementation",
-    "title": "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
-    "section": "2 PyTorch Implementation",
-    "text": "2 PyTorch Implementation",
-    "crumbs": [
-      "03 Swin Transformer",
-      "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/03-swin-transformer/03-swin-transformer.html#key-concepts",
-    "href": "posts/03-swin-transformer/03-swin-transformer.html#key-concepts",
-    "title": "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
-    "section": "3 Key Concepts",
-    "text": "3 Key Concepts\n\n\n\n\n\n\n\n\nConcept\nExplain\n\n\n\n\nSwin Transformer\n一种层次化的视觉 Transformer，通过局部窗口注意力与窗口平移机制，实现线性计算复杂度，适用于图像分类、检测、分割等任务。\n\n\nWindow-based Attention（窗口注意力）\n只在固定大小的非重叠局部窗口内计算自注意力，显著减少计算量。\n\n\nShifted Window（窗口平移）\n将窗口划分向右下平移一半窗口大小，使不同窗口之间的信息得以交互；需要使用 attention mask 来处理边界问题。\n\n\nPatch Merging（补丁合并）\n将相邻的 patch 合并以降低分辨率、增加通道数，构建金字塔式层级结构。\n\n\nRelative Position Bias（相对位置偏置）\n可学习的偏置项，基于 patch 间相对位置添加到 attention 权重中，增强空间感知能力。\n\n\nHierarchical Representation（层次化表征）\n模仿 CNN 结构，通过多层 patch merging 构建从细节到全局的多尺度特征。\n\n\nLinear Complexity（线性复杂度）\n由于注意力局限于局部窗口，总体计算复杂度随输入图像大小呈线性增长。\n\n\nDense Prediction（密集预测）\n如语义分割、目标检测等任务，模型需对图像中每个像素或区域输出结果。\n\n\nAttention Mask（注意力掩码）\n在平移窗口后用于限制不合理 token 间注意力计算的掩码矩阵。",
-    "crumbs": [
-      "03 Swin Transformer",
-      "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/03-swin-transformer/Swin-Transformer.html#swin-v2",
-    "href": "posts/03-swin-transformer/Swin-Transformer.html#swin-v2",
-    "title": "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
-    "section": "5.1 Swin V2",
-    "text": "5.1 Swin V2",
-    "crumbs": [
-      "03 Swin Transformer",
-      "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/03-swin-transformer/Swin-Transformer.html#训练技巧",
-    "href": "posts/03-swin-transformer/Swin-Transformer.html#训练技巧",
-    "title": "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
-    "section": "5.2 训练技巧",
-    "text": "5.2 训练技巧\n\nDropout Path\nGradient Checkpoint:\n\n需要可重现前向 • 被 checkpoint 的模块必须是 纯函数，即输出只依赖输入，不能依赖随机数、全局状态。\n\n\nCite to CLIP",
-    "crumbs": [
-      "03 Swin Transformer",
-      "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
-    ]
-  },
-  {
     "objectID": "posts/02-vision-transformer/Vision-Transformer.html",
     "href": "posts/02-vision-transformer/Vision-Transformer.html",
     "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
@@ -238,176 +150,44 @@
     ]
   },
   {
-    "objectID": "posts/01-transformer/post.html",
-    "href": "posts/01-transformer/post.html",
+    "objectID": "posts/03-swin-transformer/Swin-Transformer.html#swin-v2",
+    "href": "posts/03-swin-transformer/Swin-Transformer.html#swin-v2",
+    "title": "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
+    "section": "5.1 Swin V2",
+    "text": "5.1 Swin V2",
+    "crumbs": [
+      "03 Swin Transformer",
+      "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/03-swin-transformer/Swin-Transformer.html#训练技巧",
+    "href": "posts/03-swin-transformer/Swin-Transformer.html#训练技巧",
+    "title": "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
+    "section": "5.2 训练技巧",
+    "text": "5.2 训练技巧\n\nDropout Path\nGradient Checkpoint:\n\n需要可重现前向 • 被 checkpoint 的模块必须是 纯函数，即输出只依赖输入，不能依赖随机数、全局状态。\n\n\nCite to CLIP",
+    "crumbs": [
+      "03 Swin Transformer",
+      "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/04-clip/CLIP.html",
+    "href": "posts/04-clip/CLIP.html",
+    "title": "04: Learning Transferable Visual Models From Natural Language Supervision(CLIP)",
+    "section": "",
+    "text": "1 CLIP\nThis is the link to the Vision-Transformer\nThis is another link to the Transformer\nTHis is link to the Swin-Transformer\n\n\n2 Summary\n\n\n3 Key Concepts\n\n\n4 Q & A\n\n\n5 扩展\n\n\n\n\n Back to top",
+    "crumbs": [
+      "04 Clip",
+      "04: Learning Transferable Visual Models From Natural Language Supervision(**CLIP**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/Transformer.html",
+    "href": "posts/01-transformer/Transformer.html",
     "title": "Attention is All You Need(Transformer)",
     "section": "",
-    "text": "Original Paper: Attention is All You Need\nMy Implementation: GitHub Repository\nTransformer Model, as introduced in the paper Attention is all you Need (Vaswani et al. 2023) has revolutionized the field of natural language processing (NLP) and beyond. This architecture is built entirely on attention mechanisms, dispensing with recurrence and convolutions entirely, which allows for greater parallelization and efficiency in training. Nowadays, it has become the backbone of many state-of-the-art models in NLP, computer vision, and other domains. For example, ChatGPT, DeepSeek, and many other large language models (LLMs) are based on the Transformer architecture.\ndoubt, the Transformer paper will be our first paper to read in this series. In this chapter, we will dive deep into this paper, starting with understanding its background and main contributions.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#sec-input-embedding",
-    "href": "posts/01-transformer/post.html#sec-input-embedding",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "1.1 Word Embedding",
-    "text": "1.1 Word Embedding\nWord Embedding is the process of converting tokens into vectors. It is a way of representing words as dense vectors in a continuous vector space. Each word(token) is mapped to a unique vector, and similar words are mapped to similar vectors. This allows the model to capture the semantic meaning of words and their relationships with other words. The Word Embedding is typically learned during the training process of the model.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#sec-positional-encoding",
-    "href": "posts/01-transformer/post.html#sec-positional-encoding",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "1.2 Positional Encoding",
-    "text": "1.2 Positional Encoding\n\nSince our model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence.\n\nOne of the problems with transformer is that the model lack the information of the sequence order. To solve this problem, they add “positional encodings” to the input embeddings. The positional encodings have the same dimension \\(d_\\text{model}\\) as the word embeddings, so that the two can be summed. There are many choices of positional encodings, learned and fixed (sinusoidal). In this transformer, they use sine and cosine functions of different frequencies:\n\\[\n\\begin{split}\nPE_{(pos,2i)} &= sin(pos / 10000^{2i/d_{model}}) \\\\\nPE_{(pos,2i+1)} &= cos(pos / 10000^{2i/d_{model}})\n\\end{split}\n\\tag{1}\\]\nwhere \\(pos\\) is the position and \\(i\\) is the dimension. They chose this function because we hypothesized it would allow the model to easily learn to attend by relative positions, since for any fixed offset \\(k\\), \\(PE_{pos+k}\\) can be represented as a linear function of \\(PE_{pos}\\).\nThe Transformer uses positional encoding to provide unique positional information for each word, enabling the model to capture the relative positional relationships between words in a sequence.\n\n\n\n\n\n\n\n\n\n\n\n(a) Position Encoding with max sequence length 100\n\n\n\n\n\n\n\n\n\n\n\n(b) Position Encoding with max sequence length 100\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) Position Encoding with max sequence length from 100 to 200\n\n\n\n\n\n\n\n\n\n\n\n(d) Position Encoding with log base from 10,000 to 1,000\n\n\n\n\n\n\n\nFigure 2: Illustration of Position Encoding with different max sequence lengths, the horizontal red line represent the encoding at position 50. The encoding is consistent across different max sequence lengths, which allows the model to generalize to longer sequences.\n\n\n\nFrom the Figure 2 , we can see that the positional encoding changes continuously as the max sequence length increases (Figure 2 (c)). And under different max sequence lengths, the positional encoding changes are the same, the Figure 2 (a), Figure 2 (b) show the positional encoding changes at position 50 under different max sequence lengths. We can see that the positional encoding is the same under different max sequence lengths, which allows the model to better generalize to longer sequences.\n\n\n\n\n\n\nFigure 3: Details of Position Encoding\n\n\n\nIn the Figure 3 , we can see the details of different dimensions of the positional encoding. Compared to dimension (4, 5), dimension (6, 7) changes more with position. From the figure, we can see that:\n\nLow \\(i\\) (the earlier dimensions) — short wavelength, changes quickly with position pos → easy to distinguish adjacent tokens;\nHigh \\(i\\) (the later dimensions) — long wavelength, changes slowly with position pos → captures global positional information.\n\nBesides, positional encoding can also achieve different effects by changing the base of the sine and cosine functions. For example, the base can be changed from 10000 to 1000, which shortens the wavelength of the positional encoding and makes it easier for the model to capture information from adjacent positions. Figure Figure 2 (d) shows the changes in positional encoding under different bases.\nCombine with Word Embedding, we can get the final input embedding:",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#sec-multi-head-attention",
-    "href": "posts/01-transformer/post.html#sec-multi-head-attention",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "1.3 Multi-Head Attention",
-    "text": "1.3 Multi-Head Attention\nMulti Head Attention is the core module of the Transformer. Its function is to perform multi-head attention calculations on the input vectors, thereby capturing different semantic information. Attention is essentially a weighted sum process, which can be seen as a weighted average of the input vectors. The core formula is:\n\\[\n\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V\n\\tag{2}\\]\nwhere \\(Q\\)、\\(K\\)、\\(V\\) are the Query, Key, and Value matrices respectively, and \\(\\sqrt{d_k}\\) is a scaling factor used to prevent the dot product values from becoming too large, which could lead to vanishing gradients. The \\(QK^T\\) operation computes the similarity between the query and key vectors, resulting in a score matrix that indicates how much attention each position should pay to every other position. The softmax function is then applied to this score matrix to obtain the attention weights, which are used to compute a weighted sum of the value vectors.\n\n\n\n\n\n\nNote\n\n\n\nEquation 2 is the core formula of Attention, and Attention is the core module of Transformer. Understanding this formula is key to understanding Transformer. Many subsequent innovations, such as Linear Attention (Wang et al. 2020) and Multi-head Latent Attention(MLA)(DeepSeek-AI et al. 2024), are based on improvements to this formula.\n\n\n\nInstead of performing a single attention function with \\(d_\\text{model}\\)-dimensional keys, values and queries, we found it beneficial to linearly project the queries, keys and values \\(h\\) times with different, learned linear projections to \\(d_k\\), \\(d_k\\) and \\(d_v\\) dimensions, respectively.\n\nMulti-Head Attention is an extension of Attention Equation 2 that splits the input vectors into multiple subspaces (heads) and computes attention independently in each subspace. Finally, the outputs of all subspaces are concatenated to obtain the final output. The formula for Multi-Head Attention is:\n\\[\n\\begin{split}\n\\text{MultiHead}(Q, K, V) &= \\text{Concat}(\\text{head}_1, \\ldots, \\text{head}_h)W^O \\\\\n\\text{where}\\ \\text{head}_i &= \\text{Attention}(QW_i^Q, KW_i^K, VW_i^V)\n\\end{split}\n\\tag{3}\\]\nwhere \\(W_i^Q, W_i^K \\in \\mathbb{R}^{d_\\text{model} \\times d_k}, W_i^V \\in \\mathbb{R}^{d_\\text{model} \\times d_v}\\) are weights matrices used to project the input vectors into subspaces, and \\(W^O \\in \\mathbb{R}^{hd_v \\times d_\\text{model} }\\) is a weight matrix used to concatenate the outputs of all subspaces. The purpose of Multi-Head Attention is to capture different semantic information through multiple subspaces, thereby improving the model’s expressive power。\n\nDue to the reduced dimension of each head, the total computational cost is similar to that of single-head attention with full dimensionality.\n\nAs mentioned in the paper, the use of multiple heads allows the model to jointly attend to information from different representation subspaces at different positions. This is particularly useful for capturing complex patterns in the data.\n\n1.3.1 Time Complexity of Multi-Head Attention\nBefore we continue to explore other components, let’s analyze the time complexity of Multi-Head Attention. Assuming the input length is \\(n\\) and the dimension of each head is \\(d_k\\), the time complexity for computing \\(QK^T\\) is \\(\\mathcal{O}(n^2 d_k)\\), this is the standard matrix multiplication complexity.\nNext is the computation of Softmax, which has a time complexity of \\(\\mathcal{O}(n)\\) (wiki). For each row of the score matrix \\(QK^T \\in \\mathbb{R}^{n \\times n}\\), we need to compute softmax, which requires \\(n\\) computations. Therefore, the time complexity of Softmax is \\(\\mathcal{O}(n^2)\\).\nThen comes the weighted sum for the value, which also has a computational complexity of \\(\\mathcal{O}(n^2d)\\).\nThe total time complexity of Multi-Head Attention is the sum of the time complexities of these three steps, which is \\(\\mathcal{O}(n^2d)\\): \\[\n\\begin{array}{|l|l|}\n\\hline\n\\textbf{Step} & \\textbf{Time Complexity} \\\\\n\\hline\nQK^\\top & \\mathcal{O}(n^2 d) \\\\\n\\text{softmax}(QK^\\top) & \\mathcal{O}(n^2) \\\\\n\\text{attention} \\times V & \\mathcal{O}(n^2 d) \\\\\n\\hline\n\\textbf{Total} & \\mathcal{O}(n^2 d) \\\\\n\\hline\n\\end{array}\n\\tag{4}\\]\nHere is the compare of time complexity between Multi-Head Attention, RNN and CNN: \n\n\n1.3.2 Causal Attention\nCausal Attention is a special type of attention mechanism used in the Transformer model, particularly in the decoder part. The purpose of Causal Attention is to prevent the model from seeing future information during training, thereby ensuring the model’s autoregressive property. Specifically, Causal Attention masks future information when computing attention, allowing the model to only attend to current and past information.\nThe formula for Causal Attention is as follows: \\[\n\\text{CausalAttention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}} + M\\right)V\n\\tag{5}\\]\nIn this formula, \\(M\\) is a mask matrix that serves to block out future information. \\(M\\) is an upper triangular matrix where the elements below the diagonal are 0, and the elements above the diagonal are \\(-\\infty\\). This way, when computing the Softmax, the elements above the diagonal are masked out, ensuring that the model can only see current and past information.\n\n\n\n\n\n\nMasking in Transformer\n\n\n\nWhen apply masking in the transformer, there is also a padding mask. The padding mask is used to mask out the padding tokens in the input sequence, which are added to make all sequences in a batch have the same length. The padding mask is a binary matrix where the elements corresponding to padding tokens are 0, and the elements corresponding to non-padding tokens are 1. When computing attention score, we need to apply padding mask and causal mask together causal_mask | padding_mask. The combined mask is obtained by taking the element-wise minimum of the padding mask and the causal mask. This way, we can ensure that the model only attends to valid tokens in the input sequence.\n\n\n\n\n\n\n\n\nFigure 4: Illustration of Attention Mask with Padding mask\n\n\n\n\n\n1.3.3 Cross Attention\nCross Attention is another important attention mechanism used in the Transformer model, particularly in the decoder part. The purpose of Cross Attention is to allow the decoder to attend to the encoder’s output, thereby enabling the model to generate output sequences based on the input sequences. The cross attention has same structure as self-attention Equation 2, but the query comes from the previous decoder layer, and the key and value come from the output of the encoder.\n\n\n\n\n\n\nApplication of Cross Attention\n\n\n\nCross Attention can be applied in various tasks, such as Visual Question Answering (VQA), where the model needs to attend to both image features and question text. By using Cross Attention, the model can effectively integrate information from different modalities, leading to improved performance in tasks that require understanding of both visual and textual information.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#sec-layer-normalization",
-    "href": "posts/01-transformer/post.html#sec-layer-normalization",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "1.4 Layer Normalization",
-    "text": "1.4 Layer Normalization\nLayer Normalization (LayerNorm) is a technique used to normalize the inputs of a neural network layer. It is similar to Batch Normalization, but instead of normalizing across the batch dimension, it normalizes across the feature dimension. This means that for each position in the sequence, LayerNorm computes the mean and variance of the features and normalizes them accordingly.\n\n\n\n\n\n\nFigure 5: Illustration of Layer Normalization and Batch Normalization, where \\(P_i\\) is the position index, \\(i_j\\) is the hidden feature dimension index\n\n\n\nThe formula for Layer Normalization is: \\[\n\\text{LayerNorm}(\\mathrm{x}_i) = \\frac{\\mathrm{x}_i - \\mu_i}{\\sigma_i + \\epsilon} \\cdot \\gamma + \\beta\n\\tag{6}\\]\nwhere \\(\\epsilon\\) is a small constant added to the variance to prevent division by zero, and \\(\\gamma\\) and \\(\\beta\\) are learnable parameters that allow the model to scale and shift the normalized output.\nFor a batch of inputs, Layer Normalization normalizes the vectors at each position Figure 5, rather than normalizing across the entire batch. This allows Layer Normalization to better adapt to sequences of varying lengths, thereby improving model performance. Specifically, for \\(x \\in \\mathbb{R}^{B \\times H \\times S \\times d_v}\\), we normalize along the \\(d_v\\) dimension for each position, rather than normalizing across the entire batch. So, there is no running mean and running variance in LayerNorm, which is different from BatchNorm.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#residual-connection",
-    "href": "posts/01-transformer/post.html#residual-connection",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "1.5 Residual Connection",
-    "text": "1.5 Residual Connection\nResidual Connection, also known as skip connection, is a technique used to improve the training of deep neural networks. It allows the input of a layer to be added directly to the output of the layer, thereby creating a shortcut for the gradient to flow through. This helps to alleviate the problem of vanishing gradients and allows for deeper networks to be trained effectively.\n\n\n\n\n\n\nFigure 6: Illustration of Residual Connection\n\n\n\nThe formula for Residual Connection is: \\[\n\\mathbf{y} = \\text{LayerNorm}(\\mathbf{x} + \\mathrm{Sublayer}(\\mathbf{x}))\n\\tag{7}\\]\nDuring training, the residual connection provides a “shortcut” for the gradient, allowing it to bypass the complex nonlinear transformations of the sub-layer and be directly passed back to the input of the previous layer. This effectively alleviates the problem of vanishing gradients, as shown in the following formula:\n\\[\n\\begin{split}\n\\frac{\\partial \\mathcal{L}}{\\partial \\mathbf{x}}\n&= \\frac{\\partial \\mathcal{L}}{\\partial \\mathbf{y}} \\cdot \\frac{\\partial \\mathbf{y}}{\\partial \\mathbf{x}} \\\\\n&= \\frac{\\partial \\mathcal{L}}{\\partial \\mathbf{y}} \\cdot \\left( \\mathbf{I} + \\frac{\\partial \\mathrm{Sublayer}(\\mathbf{x})}{\\partial \\mathbf{x}} \\right) \\\\\n&= \\underbrace{\\frac{\\partial \\mathcal{L}}{\\partial \\mathbf{y}}}_{\\text{straight path}} +\n\\underbrace{\\frac{\\partial \\mathcal{L}}{\\partial \\mathbf{y}} \\cdot\n\\frac{\\partial\\,\\mathrm{Sublayer}(\\mathbf{x})}{\\partial \\mathbf{x}}}_{\\text{through the sub-layer}}\n\\end{split}\n\\tag{8}\\]\nEquation 8 shows the effect of residual connections on gradients. Here, \\(\\mathcal{L}\\) is the loss function. We can see that due to the presence of the first term, even if the gradient of the sub-layer approaches 0, the information of the gradient will not be completely lost.\n\n\n\n\n\n\nPre-Normalization vs Post-Normalization\n\n\n\nIn the original Transformer, the normalization is placed after the Residual Connection (Post-Normalization) Equation 7 . However, in subsequent research, many models (such as BERT) place the normalization before the Residual Connection (Pre-Normalization). It shows that the pre-normalization can has more stable training process, and no need warm up learning rate (Xiong et al. 2020). The formula for Pre-Normalization is: \\[\n\\text{Output} = \\mathrm{Sublayer}(\\mathbf{x}) + \\mathrm{LayerNorm}(\\mathbf{x})\n\\]",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#sec-point-wise-ffn",
-    "href": "posts/01-transformer/post.html#sec-point-wise-ffn",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "1.6 Point-Wise Feed Forward Network",
-    "text": "1.6 Point-Wise Feed Forward Network\n\nIn addition to attention sub-layers, each of the layers in our encoder and decoder contains a fully connected feed-forward network, which is applied to each position separately and identically.\n\nPoint-Wise Feed Forward Network is used to further process the output of the Multi-Head Attention. It consists of two linear transformations with a ReLU activation in between. The output of the first linear transformation is passed through the ReLU activation function, and then the result is passed through the second linear transformation. The purpose of Point-Wise Feed Forward Network is to introduce non-linearity and increase the model’s capacity to capture complex patterns in the data. It has formula as follows:\n\\[\n\\text{FFN}(x) = \\max(0, xW_1 + b_1)W_2 + b_2\n\\tag{9}\\]\nwhere \\(W_1\\) \\(\\in \\mathbb{R}^{d_\\text{model} \\times d_\\text{ff}}\\) and \\(W_2 \\in \\mathbb{R}^{d_\\text{ff} \\times d_\\text{model}}\\) are weight matrices, and \\(b_1 \\in \\mathbb{R}^{d_\\text{ff}}\\) and \\(b_2 \\in \\mathbb{R}^{d_\\text{model}}\\) are bias terms. The ReLU function is applied element-wise, which introduces non-linearity to the model.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#output-linear-projection-softmax",
-    "href": "posts/01-transformer/post.html#output-linear-projection-softmax",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "1.7 Output Linear Projection & Softmax",
-    "text": "1.7 Output Linear Projection & Softmax\nIn the Transformer model, after the input sequence has been processed by the Encoder and Decoder blocks, the final step is to generate the output sequence. This is done by applying a linear transformation followed by a Softmax function to the output of the Decoder. The purpose of this step is to convert the output vectors into a probability distribution over the vocabulary, allowing the model to predict the next word in the sequence. The formula for this step is as follows: \\[\n\\text{Output} = \\text{Softmax}(xW + b)\n\\tag{10}\\]\nwhere \\(x\\) is the output of the Decoder, and \\(W\\) and \\(b\\) are the weight matrix and bias term of the linear transformation, respectively. The Softmax function is applied to the output of the linear transformation to obtain a probability distribution over the vocabulary.\nThe weight matrix \\(W\\) has a shape of \\(\\mathbb{R}^{d_\\text{model} \\times V}\\), where \\(V\\) is the size of the vocabulary. This means that for each output vector, the linear transformation produces a vector of logits with a length equal to the vocabulary size. The Softmax function then converts these logits into probabilities, which can be interpreted as the likelihood of each word in the vocabulary being the next word in the sequence. And author use weight tying(Press and Wolf 2017) to share the weights between the input embedding of decoder and the output projection, which can reduce the number of parameters and improve the model’s performance.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#full-model",
-    "href": "posts/01-transformer/post.html#full-model",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "1.8 Full Model",
-    "text": "1.8 Full Model\nThe full transformer model is composed of multiple Encoder Blocks and Decoder Blocks, each containing the components we have discussed so far. The full transformer model is illustrated in the figure Figure 1 .\nTransformer的完整模型架构如图 Figure 1 所示。Transformer由多个Encoder Block和Decoder Block组成，每个Encoder Block和Decoder Block都包含了前面介绍的模块。Encoder Block和Decoder Block的结构是相似的，都是由Multi-Head Attention、Point-Wise Feed Forward Network、Layer Normalization和Residual Connection组成的。\n下图是整个Transformer的编码和解码过程的示意图：\n\n\n\n\n\n\n\n\n\n\n\n(a) Transformer Encoding Process\n\n\n\n\n\n\n\n\n\n\n\n(b) Transformer Decoding Process\n\n\n\n\n\n\n\nFigure 7: Illustrate of Transformer Encoding and Decoding Process (Image Source: The Illustrated Transformer)\n\n\n\nAs in the Figure 7 , the encoding process and decoding process of the Transformer are similar. The encoding process converts the input tokens into vectors, then encodes them through multiple Encoder Blocks, and finally converts them into a probability distribution over the vocabulary through a linear transformation and Softmax function. The decoding process, on the other hand, performs cross-attention between the output of the Encoder and the input of the Decoder, then decodes them through multiple Decoder Blocks, and finally converts them into a probability distribution over the vocabulary through a linear transformation and Softmax function.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#dataset-preparation-tokenization",
-    "href": "posts/01-transformer/post.html#dataset-preparation-tokenization",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "2.1 Dataset Preparation & Tokenization",
-    "text": "2.1 Dataset Preparation & Tokenization\nThe dataset we are using is the iwslt2017-en-zh, which is a small dataset for English to Chinese translation. You can download the dataset:\nAfter downloading the dataset, we need to preprocess the data and convert the text data into tokens. We use the Hugging Face Tokenizers library to perform tokenization and encoding. We use Byte Pair Encoding (BPE) to tokenize the input text data. The code is as follows:",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#optimizer-learning-rate-scheduler",
-    "href": "posts/01-transformer/post.html#optimizer-learning-rate-scheduler",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "2.2 Optimizer & Learning Rate Scheduler",
-    "text": "2.2 Optimizer & Learning Rate Scheduler\nWe use the Adam optimizer to optimize the model parameters. The learning rate scheduler is the same as the one used in the original Transformer paper, which is a warm-up learning rate scheduler: \\[\n\\text{lrate} = d_\\text{model}^{-0.5} \\cdot \\min(\\text{step\\_num}^{-0.5}, \\text{step\\_num} \\cdot \\text{warmup\\_steps}^{-1.5})\n\\tag{11}\\]",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#loss-curve",
-    "href": "posts/01-transformer/post.html#loss-curve",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "2.3 Loss Curve",
-    "text": "2.3 Loss Curve\nHere is the Loss Curve after training 10,000 steps: \nCongratulations! You have successfully implemented the Transformer, which is currently the most important AI model framework. By understanding it, you can comprehend most AI models. The popular models like ChatGPT and DeepSeek are all based on variations of the Transformer (we will read about these models in the upcoming articles). The complete code can be found on GitHub.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#question-1",
-    "href": "posts/01-transformer/post.html#question-1",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "4.1 Question 1",
-    "text": "4.1 Question 1\nWhy is the dot product scaled by \\(\\sqrt{d_k}\\)?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nIf not scaled, when \\(d_k\\) is large, the variance of QK also increases, causing the softmax to fall into regions with very small gradients. Dividing by \\(\\sqrt{d_k}\\) helps keep the activation values in a range suitable for training.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#question-2",
-    "href": "posts/01-transformer/post.html#question-2",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "4.2 Question 2",
-    "text": "4.2 Question 2\nWhat problem does Multi-Head Attention solve?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nIt allows the model to attend to information from different representation subspaces at different positions, overcoming the tendency of single-head self-attention to “average out” information.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#question-3",
-    "href": "posts/01-transformer/post.html#question-3",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "4.3 Question 3",
-    "text": "4.3 Question 3\nWhat is the purpose of positional encoding in the Transformer?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nIt provides the model with information about the order of the sequence, enabling it to capture positional relationships between tokens.",
-    "crumbs": [
-      "01 Transformer",
-      "Attention is All You Need(**Transformer**)"
-    ]
-  },
-  {
-    "objectID": "posts/01-transformer/post.html#question-4",
-    "href": "posts/01-transformer/post.html#question-4",
-    "title": "Attention is All You Need(Transformer)",
-    "section": "4.4 Question 4",
-    "text": "4.4 Question 4\nWhat is the time complexity of Multi-Head Attention compare to RNN/CNN?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nThe time complexity of Multi-Head Attention is \\(\\mathcal{O}(n²d)\\), where \\(n\\) is the sequence length and \\(d\\) is the model dimension. In contrast, RNNs have a time complexity of \\(\\mathcal{O}(n)\\) due to their sequential nature, while CNNs require stacking multiple layers to capture long-range dependencies.",
+    "text": "Self-attention, sometimes called intra-attention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence. Self-attention has been used successfully in a variety of tasks including reading comprehension, abstractive summarization, textual entailment and learning task-independent sentence representations  Attention_is_all_you_need, p.2  THis\n\n\n\n\n Back to top",
     "crumbs": [
       "01 Transformer",
       "Attention is All You Need(**Transformer**)"
