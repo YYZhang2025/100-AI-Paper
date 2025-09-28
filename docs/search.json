@@ -1,0 +1,456 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "100 Papers with Code",
+    "section": "",
+    "text": "This website aims to collect and showcase 100 important AI papers and their code implementations. Each paper is accompanied by a link for readers to explore further.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html#about-this-website",
+    "href": "index.html#about-this-website",
+    "title": "100 Papers with Code",
+    "section": "",
+    "text": "This website aims to collect and showcase 100 important AI papers and their code implementations. Each paper is accompanied by a link for readers to explore further.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html#why-build-this-website",
+    "href": "index.html#why-build-this-website",
+    "title": "100 Papers with Code",
+    "section": "Why build this website?",
+    "text": "Why build this website?\nOn the one head, during my study, reading, and practice in the field of AI, I found that many important papers and code implementations were scattered in various places. To facilitate access for myself and others, I decided to build this website to consolidate these important papers and my implementations in one place. On the other hand, there is a gap between topic in papers and practical application. By providing code implementations, I hope to help bridge this gap and make it easier for practitioners to apply the latest research results.\nThere are some awesome resource about the paper and implementation such as:\n\nAnnotated Research Paper: Collection of simple PyTorch implementations of neural networks and related algorithms.\nPapers with Code (It was replace by Hugging Face now): The largest resource for finding machine learning papers, code and evaluation tables.\n\nBut why I still build this website?\n\nThe Annotated Research Paper focuses more on each component of the paper, it didn’t provide the whole modeling and training process.\nThe Papers with Code provides the paper and code, but the code is sometime hard to understand, and it didn’t provide the explanation of the code.\n\nThis website is built to fill these gaps by providing clear explanations and easy-to-understand code implementations for each paper.Each page(paper) will come with a self-contained Jupyter Notebook that can be run directly, making it easier for readers to understand and apply the concepts presented in the papers.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use-this-website",
+    "href": "index.html#how-to-use-this-website",
+    "title": "100 Papers with Code",
+    "section": "How to use this website?",
+    "text": "How to use this website?\nThis website is designed to be user-friendly and accessible for anyone interested in understanding and implementing the latest research in AI and machine learning. Each paper has its own dedicated page that includes\n\nThe explanation of the paper.\nCode implementation.\n\nQ & A part (you can use as flash cards).\nThe further direction might be interesting to explore (According to my understanding).\nBelow is the list of papers that have been implemented or are planned to be documented. You can click on the paper title to view detailed content.\n\n\n\n\n\n\n\n\n\n\n\n\nNumber\nPaper Name\nDescription\nCode\nCategory\n\n\n\n\n01\nAttention is All You Need (Transformer )\nTransformer 是一种基于自注意力机制的深度学习架构，能够并行处理序列，在语言、视觉和多模态任务中表现出色，并且作为 GPT、BERT 等大型语言模型（LLM）的核心基础，推动了当今生成式人工智能的快速发展。\n\nNLP / Transformer\n\n\n02\nAn Image is Worth 16x16 Words: Transformers for Image Recognition at Scale ( Vision Transformer )\nVision Transformer (ViT) 是一种将图像划分为小块（patches），并将其作为 token 输入标准 Transformer 模型进行图像分类的架构，首次实现了纯注意力机制在视觉任务中的成功应用。\n\nComputer Vision / Transformer\n\n\n03\nSwin Transformer: Hierarchical Vision Transformer using Shifted Windows ( Swin Transformer )\nSwin Transformer 是一种使用层次化结构和滑动窗口自注意力机制的视觉 Transformer 模型，既保留了局部建模的高效性，又通过窗口偏移实现跨区域信息交互，适用于图像分类、目标检测和语义分割等多种视觉任务。\n\nComputer Vision / Transformer\n\n\n04\nLearning Transferable Visual Models From Natural Language Supervision ( CLIP )\nCLIP 是一种利用大规模图文对比学习，将图像与自然语言映射到同一语义空间，从而实现零样本图像识别与跨模态检索的多模态基础模型\n\nComputer Vision / Transformer\n\n\n05\nFlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness ( Flash Attention )\nFlashAttention 是一种优化的注意力机制实现，通过减少内存访问和提升计算效率，实现更快、更节省资源的 Transformer 推理与训练。\n\nTransformer / AI Engine",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/Transformer.html",
+    "href": "posts/01-transformer/Transformer.html",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "",
+    "text": "Self-attention, sometimes called intra-attention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence. Self-attention has been used successfully in a variety of tasks including reading comprehension, abstractive summarization, textual entailment and learning task-independent sentence representations  Attention_is_all_you_need, p.2  THis\n\n\n\n\n Back to top",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/04-clip/CLIP.html",
+    "href": "posts/04-clip/CLIP.html",
+    "title": "04: Learning Transferable Visual Models From Natural Language Supervision(CLIP)",
+    "section": "",
+    "text": "1 CLIP\nThis is the link to the Vision-Transformer\nThis is another link to the Transformer\nTHis is link to the Swin-Transformer\n\n\n2 Summary\n\n\n3 Key Concepts\n\n\n4 Q & A\n\n\n5 扩展\n\n\n\n\n Back to top",
+    "crumbs": [
+      "04 Clip",
+      "04: Learning Transferable Visual Models From Natural Language Supervision(**CLIP**)"
+    ]
+  },
+  {
+    "objectID": "posts/03-swin-transformer/03-swin-transformer.html",
+    "href": "posts/03-swin-transformer/03-swin-transformer.html",
+    "title": "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
+    "section": "",
+    "text": "在阅读Swin Transformer之前，我们回顾一下Vision Transformer是什么。 ViT 在处理图像时，会将整张图像分割成固定大小的patch，并进行global self-attention的计算，从而捕捉图像中的全局信息。然而，这种方法存在两个核心问题：\n为了解决这些问题，Swin Transformer (Liu et al. 2021) 提出了一种新的架构，它通过引入层次化的特征表示和移动窗口机制，来有效地捕捉图像中的局部和全局信息。Swin Transformer 的主要贡献是：\n接下来，我们来详细介绍 Swin Transformer 的架构和关键技术。",
+    "crumbs": [
+      "03 Swin Transformer",
+      "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/03-swin-transformer/03-swin-transformer.html#swin-transformer-架构",
+    "href": "posts/03-swin-transformer/03-swin-transformer.html#swin-transformer-架构",
+    "title": "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
+    "section": "1 Swin Transformer 架构",
+    "text": "1 Swin Transformer 架构\n\n\n\n\n\n\nFigure 1: The Swin Transformer Architecture\n\n\n\n如图 Figure 1 所示，Swin Transformer 的架构由以下几个主要部分组成：\n\nPatch Partition: 将输入图像分割成固定大小的patch，类似于 ViT。\nPatch Merging （图中红色部分）: 在每个阶段通过合并相邻的patch, 逐步减少token数量，构建层次化的特征表示。通过将相邻的patch进行拼接和线性变换，减少特征图的分辨率，同时增加通道数（图中 蓝色 部分）。\nWindow-based Multi-head Self Attention (W-MSA) （图中橙色部分）: 在固定大小的非重叠窗口内进行自注意力操作，将复杂度从 \\(O(( \\frac{HW}{P^2})^2)\\) 降到 \\(O(M^2 \\cdot \\frac{HW}{M^2}) = O(HW \\cdot M^2)\\)，其中 \\(M\\) 是窗口大小.\nShifted Window Multi-head Self Attention (SW-MSA) （图中橙色部分）: 通过在相邻层之间移动窗口位置，增强了模型的局部和全局信息捕捉能力。\n\n\n1.1 Patch Partition\n假设我们有一个输入图像 \\(X\\)，其大小为 \\(H \\times W \\times 3\\)，其中 \\(H\\) 是高度，\\(W\\) 是宽度，\\(3\\) 是通道数。我们将图像分割成大小为 \\(P \\times P\\) 的patches, 之后将这些raw pixel concentration 在一起，就得到了一个 token。 假设\\(P=4\\)，每个token的大小为 \\(4 \\times 4 \\times 3 = 48\\), 总共有 \\(\\frac{H}{4} \\times \\frac{W}{4}\\) 个token。\n\n\n1.2 Linear Embedding\n在将图像分割成patches后，我们需要将每个patch转换为一个向量表示。这个过程称为线性嵌入（Linear Embedding）。具体来说，我们将每个patch展平为一个向量，并通过一个线性变换（通常是一个全连接层）将其映射到一个更高维的空间中。这个就是在 Stage 1 Figure 1 中的 红色 部分。\n\n\n1.3 Patch Merging\n在每个阶段，Swin Transformer 通过合并相邻的patch来逐步减少token数量，构建层次化的特征表示。具体来说，在每个阶段，我们将相邻的patch进行拼接和线性变换，减少特征图的分辨率，同时增加通道数。这个过程称为 Patch Merging。假设在 Stage 1 中，我们有一个大小为 \\(H \\times W \\times C\\) 的特征图，其中 \\(C\\) 是通道数。通过 Patch Merging，我们将特征图的大小减少为 \\(\\frac{H}{2} \\times \\frac{W}{2} \\times 2C\\)，其中 \\(2C\\) 是合并后的通道数。\n\nTo produce a hierarchical representation, the number of tokens is reduced by patch merging layers as the network gets deeper. The first patch merging layer concatenates the features of each group of 2 × 2 neighboring patches, and applies a linear layer on the 4C-dimensional concatenated features. This reduces the number of tokens by a multiple of 2 × 2 = 4 (2× downsampling of resolution), and the output dimension is set to 2C.\n\n总的来说，Patch Merging 就是 Patch Partition + Linear Embedding 的组合。它通过将相邻的patch进行拼接和线性变换，减少特征图的分辨率，同时增加通道数，从而构建层次化的特征表示。\n\n\n1.4 Window-based Multi-head Self Attention (W-MSA)\n接下来，就到了Swin-Transformer的核心部分：窗口自注意力（Window-based Multi-head Self Attention, W-MSA）。在这个阶段，我们将特征图划分为固定大小的非重叠窗口，并在每个窗口内进行自注意力计算。具体来说，假设我们有一个大小为 \\(H \\times W \\times C\\) 的特征图，我们将其划分为大小为 \\(M \\times M\\) 的窗口，其中 \\(M\\) 是窗口大小。然后，在每个窗口内，我们计算自注意力。\n\n\n\n\n\n\nFigure 2: Window-based Multi-head Self Attention\n\n\n\n如图 Figure 2 所示，W-MSA 的Attention计算方式与ViT类似，但它只在每个窗口内进行计算，而不是在整个图像上进行全局计算。这种方法大大减少了计算复杂度，从 \\(O(( \\frac{HW}{P^2})^2)\\) 降到 \\(O(M^2 \\cdot \\frac{HW}{M^2}) = O(HW \\cdot M^2)\\)，其中 \\(M\\) 是窗口大小。\n我们可以看到，不同窗口之间的Attention是独立的，因此我们可以并行计算每个窗口的Attention，这样可以大大提高计算效率。\n\n\n1.5 Shifted Window Multi-head Self Attention (SW-MSA)\nW-MSA虽然在每个窗口内进行了自注意力计算，但它仍然存在一个问题：相邻窗口之间的信息无法直接传递。为了解决这个问题，Swin Transformer 引入了移动窗口机制（Shifted Window Multi-head Self Attention, SW-MSA）。具体来说，在每个阶段，Swin Transformer 会将窗口的位置移动一个固定的步幅，然后再进行自注意力计算。这样，相邻窗口之间就可以通过重叠区域进行信息传递，从而增强了模型的局部和全局信息捕捉能力。\n\n\n\n\n\n\nFigure 3: Shifted Window Multi-head Self Attention\n\n\n\n但是要如何实现这个Shifted Attention呢？ 其中一种方法是，将特征图进行padding，然后将窗口划分为大小为 \\(M \\times M\\) 的非重叠窗口。然后，在每个窗口内进行自注意力计算。\n\nA naive solution is to pad the smaller windows to a size of M × M and mask out the padded values when computing attention.\n\n\n\n\n\n\n\n\n\n\nIllustration of Padding\n\n\n\n\n\n\n\nIllustration of Padding\n\n\n\n\n\n\nFigure 4\n\n\n\n\n这种方法虽然可以实现移动窗口机制，但会增加计算复杂度。Swin Transformer 采用了一种更高效的方式，通过 cyclic shift 来实现窗口的移动。这种可以在不增加窗口数量的情况下，实现窗口的移动，从而减少计算复杂度。不过需要注意的是，这种方式会将一些窗口的消息混淆，因此需要在计算自注意力时进行mask操作，以确保每个窗口只关注自己的区域。具体的实现方式可以参考接下来的 PyTorch 实现部分。\n\n\n1.6 Position Embedding\nTransformer 模型通常需要位置编码（Position Embedding）来捕捉输入序列中元素的位置信息。Transformer是用来 sin cos 函数来生成位置编码的。使用 learned position embedding 的方式来生成位置编码。Swin Transformer使用了第三种方式， relative position embedding。它通过计算相对位置来生成位置编码，这样可以更好地捕捉输入序列中元素之间的相对关系。具体的\n\\[\n\\text{Attention}(Q, K, V) = \\mathrm{SoftMax}\\left(\\frac{QK^\\top}{\\sqrt{d}} + B\\right)V\n\\]\n其中B是相对位置编码矩阵。这个矩阵的大小为 \\(M^2 \\times M^2\\)，其中 \\(M\\) 是窗口大小。对于每个窗口的元素，他们的相对位置是 \\([−M + 1, M − 1]\\)。 因此我们可以将一个较小尺寸的偏置矩阵 \\(\\hat{B} \\in \\mathbb{R}^{(2M - 1) \\times (2M - 1)}\\) 参数化，并且矩阵 \\(B\\) 中的值是从 \\(\\hat{B}\\) 中取出的。\n\n\n1.7 Others\nSwin Transformer 还引入了一些其他的技术来提高模型的性能和效率，例如：\n\nLayer Normalization (Pre-Norm): 在每个阶段的输入和输出之间使用 Layer Normalization 来稳定训练过程。\nDropout: 在自注意力计算和全连接层中使用 Dropout 来防止过拟合。\nResidual Connection: 在每个阶段的输入和输出之间使用残差连接来加速收敛。\nMLP: 在每个阶段的输出后使用多层感知机（MLP）来进一步处理特征。\nActivation Function: 使用 GELU 激活函数来提高模型的非线性表达能力。\n\n在这里就不过多赘述了，感兴趣的同学可以参考原论文 (Liu et al. 2021)， 或者我的前两篇文章：\n\n01 : Transformer\n02 : Vision Transformer",
+    "crumbs": [
+      "03 Swin Transformer",
+      "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/03-swin-transformer/03-swin-transformer.html#pytorch-implementation",
+    "href": "posts/03-swin-transformer/03-swin-transformer.html#pytorch-implementation",
+    "title": "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
+    "section": "2 PyTorch Implementation",
+    "text": "2 PyTorch Implementation",
+    "crumbs": [
+      "03 Swin Transformer",
+      "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/03-swin-transformer/03-swin-transformer.html#key-concepts",
+    "href": "posts/03-swin-transformer/03-swin-transformer.html#key-concepts",
+    "title": "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
+    "section": "3 Key Concepts",
+    "text": "3 Key Concepts\n\n\n\n\n\n\n\n\nConcept\nExplain\n\n\n\n\nSwin Transformer\n一种层次化的视觉 Transformer，通过局部窗口注意力与窗口平移机制，实现线性计算复杂度，适用于图像分类、检测、分割等任务。\n\n\nWindow-based Attention（窗口注意力）\n只在固定大小的非重叠局部窗口内计算自注意力，显著减少计算量。\n\n\nShifted Window（窗口平移）\n将窗口划分向右下平移一半窗口大小，使不同窗口之间的信息得以交互；需要使用 attention mask 来处理边界问题。\n\n\nPatch Merging（补丁合并）\n将相邻的 patch 合并以降低分辨率、增加通道数，构建金字塔式层级结构。\n\n\nRelative Position Bias（相对位置偏置）\n可学习的偏置项，基于 patch 间相对位置添加到 attention 权重中，增强空间感知能力。\n\n\nHierarchical Representation（层次化表征）\n模仿 CNN 结构，通过多层 patch merging 构建从细节到全局的多尺度特征。\n\n\nLinear Complexity（线性复杂度）\n由于注意力局限于局部窗口，总体计算复杂度随输入图像大小呈线性增长。\n\n\nDense Prediction（密集预测）\n如语义分割、目标检测等任务，模型需对图像中每个像素或区域输出结果。\n\n\nAttention Mask（注意力掩码）\n在平移窗口后用于限制不合理 token 间注意力计算的掩码矩阵。",
+    "crumbs": [
+      "03 Swin Transformer",
+      "03: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/03-swin-transformer/Swin-Transformer.html#swin-v2",
+    "href": "posts/03-swin-transformer/Swin-Transformer.html#swin-v2",
+    "title": "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
+    "section": "5.1 Swin V2",
+    "text": "5.1 Swin V2",
+    "crumbs": [
+      "03 Swin Transformer",
+      "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/03-swin-transformer/Swin-Transformer.html#训练技巧",
+    "href": "posts/03-swin-transformer/Swin-Transformer.html#训练技巧",
+    "title": "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(Swin Transformer)",
+    "section": "5.2 训练技巧",
+    "text": "5.2 训练技巧\n\nDropout Path\nGradient Checkpoint:\n\n需要可重现前向 • 被 checkpoint 的模块必须是 纯函数，即输出只依赖输入，不能依赖随机数、全局状态。\n\n\nCite to CLIP",
+    "crumbs": [
+      "03 Swin Transformer",
+      "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/02-vision-transformer/Vision-Transformer.html",
+    "href": "posts/02-vision-transformer/Vision-Transformer.html",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
+    "section": "",
+    "text": "在了解了什么是Transformer之后，我们来看看如何将Transformer应用于Computer Vision。Vision Transformer（ViT）(Dosovitskiy et al. 2021) 是一个将Transformer架构应用于图像分类的模型。它的核心思想是将图像划分为小块（patches），然后将这些小块视为序列数据，类似于处理文本数据。",
+    "crumbs": [
+      "02 Vision Transformer",
+      "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(**ViT**)"
+    ]
+  },
+  {
+    "objectID": "posts/02-vision-transformer/Vision-Transformer.html#patch-embedding",
+    "href": "posts/02-vision-transformer/Vision-Transformer.html#patch-embedding",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
+    "section": "1.1 Patch Embedding",
+    "text": "1.1 Patch Embedding\n\nThe standard Transformer receives as input a 1D sequence of token embeddings. To handle 2D images, we reshape the image \\(x \\in \\mathbb{R}^{H \\times W \\times C}\\) into a sequence of flattened 2D patches\\(x \\in \\mathbb{R}^{N \\times (P^{2} \\times C)}\\), where (\\(H, W\\)) is the resolution of the original image, \\(C\\) is the number of channels, (\\(P, P\\)) is the resolution of each image patch, and \\(N = HW/P^{2}\\) is the resulting number of patches, which also serves as the effective input sequence length for the Transformer. The Transformer uses constant latent vector size \\(D\\) through all of its layers, so we flatten the patches and map to \\(D\\) dimensions with a trainable linear projection. We refer to the output of this projection as the patch embeddings.  An Image is Worth 16x16 Words- Transformers for Image Recognition at Scale, p.3 \n\n在Transformer 这一篇，我们了解到，它是作用于Sequence Modeling的，很显然，Image 不是 Sequence的。很直观的第一种想法就是，将图片直接展开，从二维 (\\(3, H, W\\)) 展开成一维的 (\\(3, H \\times W\\)). 这样我们就得到的图片的Sequence Model。如下图@fig-flat-image所示\n\n\n\n\n\n\nFigure 2\n\n\n\n这种方法有一种明显的问题就是：Sequence的长度太长，举个例子，对于 \\(3\\times 256 \\times 256\\) 的图片，我们有 \\(256 \\times 256 = 65,336\\) 个tokens，通过这种方法，所需要的训练时长很长。并且它没有用到图片的一个特性：相邻的pixel 之间，是有很高的correlation的。所以我们很自然的想到：如果把相邻的pixels和在一组，组成一个patch，这样不就既减少了tokens的数量，又用到了pixel之间的correlation。这就是Vision Transformer 的Patch Embedding。 这样我们就得到了。 接下来我们只需要用，一个MLP，将我们展开的patch，映射到 \\(D\\)- dimension的空间，这样我们就可以传入Transformer 模型了。\n接下来我们来看看代码怎么实现：\n# Load Image and resize it to certain size\nimage_path = IMAGE_PATN\nimg_bgr = cv2.imread(image_path)\nimg_resized = cv2.resize(img_bgr, (IMAGE_SIZE, IMAGE_SIZE), interpolation=cv2.INTER_AREA)\nimg = cv2.cvtColor(img_resized, cv2.COLOR_BGR2RGB) \n\n# Patchify \npatches = einops.rearrange(\n     img, \"(h ph) (w pw) c -&gt; (h w) ph pw c\", ph=PATCH_SIZE, pw=PATCH_SIZE\n)\n通过这个Patchify只有，我们得到将图片Patch到了\n\n\n分成了不同的小Patch。\n接下来我们要做的就是，将这些Patch 展开，然后传入一个MLP，\nflat_patch = einops.rearrange(\n     patches, \"n ph pw c -&gt; n (ph pw c)\"\n)\n\n\nmlp = nn.Linear(PATCH_SIZE * PATCH_SIZE * 3, d_model)\npatch_embedding = mlp(flat_patch)\n同这种方式，我们就可以见图片转化为Transformer可以接受的vector。不过在实际操作中，我们并不会用以上的方式，因为上面的方式实现起来比较慢，我们可以将Patch 和 Linear Project和在一起。\n\n\n\n\n\n\nTip\n\n\n\n将几个tensor 的operation操作合成一个的方法，叫做kernel fusion，这是一种提高训练和推理素的方法\n\n\n在实际的代码中，我们用Convolution Layer 代替 Patch + Flatten+ Linear 的方法. 如果我们用一个 卷积层，参数设置为： • kernel_size = PATCH_SIZE （卷积核覆盖一个 patch） • stride = PATCH_SIZE （不重叠地移动，相当于切 patch） • in_channels = 3（RGB） • out_channels = d_model\n那么卷积会： 1. 把输入图片分成 PATCH_SIZE x PATCH_SIZE 的不重叠块（因为 stride = kernel_size）。 2. 对每个 patch 做一次线性映射（因为卷积本质上就是对局部区域做加权求和，相当于 Linear）。 3. 输出的 shape 自动就是 (batch, num_patches, d_model)。\n这正好等价于 切 patch + flatten + Linear 的组合。\n代码如下：\nclass PatchEmbedding(nn.Module):\n    def __init__(self, config: ModelConfig):\n        super().__init__()\n\n        self.conv = nn.Conv2d(\n            in_channels=config.num_channels,\n            out_channels=config.hidden_dim,\n            kernel_size=config.patch_size,\n            stride=config.patch_size,\n            padding=\"valid\" if config.patch_size == 16 else \"same\",\n        )\n\n    def forward(self, imgs: torch.Tensor) -&gt; torch.Tensor:\n        \"\"\"\n        imgs: (batch_size, num_channels, height, width)\n        Returns: (batch_size,  num_patches_height, num_patches_width, hidden_dim)\n        \"\"\"\n        # (B, C, H, W) -&gt; (B, hidden_dim, H', W')\n        x = self.conv(imgs)\n\n        # (B, hidden_dim, H', W') -&gt; (B, hidden_dim, H' * W')\n        x = x.flatten(2)\n\n        # (B, hidden_dim, H' * W') -&gt; (B, H' * W', hidden_dim)\n        x = x.transpose(1, 2)\n        return x\n用卷积的好处，除了可以更高效的实现Patch Embedding，代码更加简洁之外，我们还可以通过改变 stride 来使一些Patch overlapping，获得一个多尺度的结构，\nThe image is convert along this process: \\[\n\\boxed{\n\\mathbf{x} \\in \\mathbb{R}^{C \\times H \\times W}\n\\quad \\xrightarrow{\\text{Patchify}} \\quad\n\\{ x_i \\in \\mathbb{R}^{C \\times P \\times P} \\}{i=1}^N\n\\quad \\xrightarrow{\\text{Flatten}} \\quad\n\\{ x_i \\in \\mathbb{R}^{(C \\cdot P \\cdot P)} \\}_{i=1}^N\n\\quad \\xrightarrow{\\text{Linear } W \\in \\mathbb{R}^{(C \\cdot P \\cdot P) \\times D}} \\quad\n\\{ z_i \\in \\mathbb{R}^{D} \\}_{i=1}^N\n}\n\\tag{1}\\]",
+    "crumbs": [
+      "02 Vision Transformer",
+      "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(**ViT**)"
+    ]
+  },
+  {
+    "objectID": "posts/02-vision-transformer/Vision-Transformer.html#position-encoding",
+    "href": "posts/02-vision-transformer/Vision-Transformer.html#position-encoding",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
+    "section": "1.2 Position Encoding",
+    "text": "1.2 Position Encoding\n将图片转化为 Transformer 的输入之后，接下来Transformer中的另一个组件就是传入 Position Information。我们知道在Transformer 中，他们用的是 sine-cosine position embedding，在那篇文章中，我们也提到了，还存在其他不同的Position Encoding的办法，ViT 用的就是另一种办法，Learned Position Embedding。Learned Position Embedding的方法很简单，也很好理解，对于每一个位置，我们给他一个index，将这个index传入一个 Embedding Matrix， 我们就得到一个Position Embedding。不过与Token Embedding不同的是，我们会用到所有的Position，也整个matrix， 所以我们不用定index，直接定义整个Embedding，然后将它传入Transformer中。\nclass PositionalEncoding(nn.Module):\n    def __init__(self, config: ModelConfig):\n        super().__init__()\n\n        self.positional_embedding = nn.Parameter(\n            torch.randn(\n                1,\n                (config.image_size // config.patch_size) ** 2 + 1,\n                config.hidden_dim,\n            )\n        )\n\n        self.cls_token = nn.Parameter(torch.randn(1, 1, config.hidden_dim))\n\n    def forward(self, x: torch.Tensor):\n        \"\"\"\n        x: (batch_size, num_patches, hidden_dim)\n        Returns: (batch_size, num_patches, hidden_dim)\n        \"\"\"\n        # Add positional encoding to the input tensor\n        batch_size = x.size(0)\n\n        pos_embedding = self.positional_embedding.expand(batch_size, -1, -1)\n        cls_token = self.cls_token.expand(batch_size, -1, -1)\n\n        x = torch.cat((cls_token, x), dim=1)\n        return x + pos_embedding\n为什么ViT要用Learned Position Embedding呢？在ViT这篇文章中，他们尝试过不同的Position Embedding，比如：\n\nNo Positional Information\n1-dimensional Positional Embedding\n2-dimensional Positional Embedding\nRelative Positional Embedding\n\n发现，除了No Positional Information之外，其余3种在Image Classification中的表现，都是差不多的。\n\n\n\n\n\n\nFigure 3\n\n\n\n论文中表示，可能是因为所需要的 Position的信息较小，对于不同种类的Position Embedding的方法，学习这个Position Information的能力，都是差不多的。\n\nWe speculate that since our Transformer encoder operates on patch-level inputs, as opposed to pixel-level, the differences in how to encode spatial information is less important. More precisely, in patch-level inputs, the spatial dimensions are much smaller than the original pixel-level inputs, e.g., \\(14 \\times 14\\) as opposed to \\(224 \\times 224\\), and learning to represent the spatial relations in this resolution is equally easy for these different positional encoding strategies.  An Image is Worth 16x16 Words- Transformers for Image Recognition at Scale, p.18 \n\n不过，尽管Position的方法不重要，但是不同的训练参数，还是会影响到学习到的Position Information, 下图所示：\n\n\n\n\n\n\nFigure 4\n\n\n\n\n1.2.1 Extending Position Encoding\n当我们有了一个Pre-Training的模型，我们想用它Fine-Tuning到一个不同图片大小的数据库，我们改怎么做呢，第一个方法当然是，Resize 我们的图片，到ViT Pre-training的图片大小，但是，这个能导致较大的图片，失去很多细节。如果我们想保持图片的大小不变，同时让模型训练，我们就需要Extend Position Encoding，因为当Patch Size不变，图片大小变了的话，产生的Number of Patches 也是会改变的，这样，就是损失一些信息。我们需要做的是，找到一种方法，增大或者减小Position的数量。 这就是所谓的Position Interpolation。\n2D interpolation of the pre-trained position embeddings • ViT 在预训练时，通常用固定输入分辨率（比如 224×224） → 生成固定数量的 patch（比如 16×16 patch → 196 个 patch）。 • 但在 fine-tuning 时，输入图片可能大小不一样，比如 384×384，这时 patch 数量就变了。 • 这会导致原本的 位置编码 (position embeddings) 和新的 patch 数量对不上。 • 解决办法：对预训练好的位置编码做 二维插值 (2D interpolation)，根据 patch 在原图中的空间位置，把位置编码拉伸/缩放到新的分辨率。\n\nThe Vision Transformer can handle arbitrary sequence lengths (up to memory constraints), however, the pre-trained position embeddings may no longer be meaningful. We therefore perform 2D interpolation of the pre-trained position embeddings, according to their location in the original image  An Image is Worth 16x16 Words- Transformers for Image Recognition at Scale, p.4 \n\ndef interpolate_pos_encoding(self, x, w, h):\n    npatch = x.shape[1] - 1\n    N = self.pos_embed.shape[1] - 1\n    if npatch == N and w == h:\n        return self.pos_embed\n    class_pos_embed = self.pos_embed[:, 0]\n    patch_pos_embed = self.pos_embed[:, 1:]\n    dim = x.shape[-1]\n    w0 = w // self.patch_embed.patch_size\n    h0 = h // self.patch_embed.patch_size\n    \n    patch_pos_embed = F.interpolate(\n        patch_pos_embed.reshape(\n            1, \n            int(math.sqrt(N)), \n            int(math.sqrt(N)), \n            dim\n        ).permute(0, 3, 1, 2),\n        scale_factor=(w0 / math.sqrt(N), h0 / math.sqrt(N)),\n        mode='bicubic',\n    )\n    patch_pos_embed = patch_pos_embed.permute(0, 2, 3, 1).view(1, -1, dim)\n    return torch.cat((class_pos_embed.unsqueeze(0), patch_pos_embed), dim=1)",
+    "crumbs": [
+      "02 Vision Transformer",
+      "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(**ViT**)"
+    ]
+  },
+  {
+    "objectID": "posts/02-vision-transformer/Vision-Transformer.html#cls-tokens-mlp-head",
+    "href": "posts/02-vision-transformer/Vision-Transformer.html#cls-tokens-mlp-head",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
+    "section": "1.3 [CLS] Tokens & MLP Head",
+    "text": "1.3 [CLS] Tokens & MLP Head\n在 Transformer 这一节，我们了解到：每输入一个token，Transformer会输出对应的token。这就是说，对于每个patch，Transformer会输出对应的Tokens，那么，我们应该选择哪一个token作为我们图片的表示呢。 BERT (Devlin et al. 2019)， 用了一个 [CLS], 来表示一个句子。同理，我们也可以添加一个 [CLS] token, 来表示一张图片。同时，对于 [CLS] token, 我们也要在给他一个表示位置的信息。这就是为什么在Position Encoding上，我们有 (config.image_size // config.patch_size) ** 2 + 1, 位置信息，其中 +1 就是 [CLS] 的位置信息。 总结一下 [CLS] token 的作用就是用来聚合所有的Patch的消息，然后用来Image 的Representation。\n我们想一下，除了加一个 [CLS] token，之外，我们还有其他办法来表示图片吗。有一种很自然的方法就是，将所有的patch的消息收集起来，然后去一个平均值来表示这个图片。类似于传统的ConvNet(e.g. ResNet) 我们可以通过 AvgPooling 来实现。 不过论文中提到， 对于两种不同的Image Representation，需要有不同的Learning Rate 来训练这个网络。\nOther content \n有了Image Represent之后，我们只需要将这个传入一个简单的MLP，我们就可以得到一个Classifier。MLP的输入是hidden dim，输入则是我们Number of Classes。不同的Index 表示不同的Classses。\n\nAn initial attempt at using only image-patch embeddings, globally average-pooling (GAP) them, followed by a linear classifier—just like ResNet’s final feature map—performed very poorly. However, we found that this is neither due to the extra token, nor to the GAP operation. Instead, the difference in performance is fully explained by the requirement for a different learning-rate,  An Image is Worth 16x16 Words- Transformers for Image Recognition at Scale, p.17 \n\n\nBoth during pre-training and fine-tuning, a classification head is attached to \\(\\mathrm{z}_{L}^{0}\\). The classification head is implemented by a MLP with one hidden layer at pre-training time and by a single linear layer at fine-tuning time.  An Image is Worth 16x16 Words- Transformers for Image Recognition at Scale, p.3 \n\nclass ClassifierHead(nn.Module):\n    def __init__(self, config: ModelConfig):\n        super().__init__()\n        \n        self.fc1 = nn.Linear(config.hidden_dim, config.mlp_dim)\n        self.fc2 = nn.Linear(config.mlp_dim, config.num_classes)\n        self.dropout = nn.Dropout(config.dropout_rate)\n\n    def forward(self, x: torch.Tensor):\n        \"\"\"\n        x: (batch_size, num_patches, hidden_dim)\n        Returns: (batch_size, num_classes)\n        \"\"\"\n        # Use the CLS token for classification\n        cls_token = x[:, 0, :]\n        x = F.relu(self.fc1(cls_token))\n        \n        x = self.dropout(x)\n        x = self.fc2(x)\n\n        return x",
+    "crumbs": [
+      "02 Vision Transformer",
+      "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(**ViT**)"
+    ]
+  },
+  {
+    "objectID": "posts/02-vision-transformer/Vision-Transformer.html#transformer-encoder-block",
+    "href": "posts/02-vision-transformer/Vision-Transformer.html#transformer-encoder-block",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
+    "section": "1.4 Transformer Encoder Block",
+    "text": "1.4 Transformer Encoder Block\n至此，我们已经讲完了ViT与Transformer的主要不同之处。接下来，就是Transformer的Encoder。 \n这部分，和Transformer原本的Encoder很类似，只不过有几处不同：\n\nPre-Norm: 在ViT同，输入先进行一个LayerNorm，然后在传入MHA或者MLP中，反观在Transformer原本的Encoder中，我们是先将MHA或者MLP的输出与输入加在一起，之后再进行一个Normalization。这叫做Post-Norm\nMLP的实现：在Transformer Encoder中，用的是 ReLU, 而在ViT中，用的是 GELU\n\n除此之外，其他部分都是一样的。一下是ViT Encoder的实现：\nclass EncoderBlock(nn.Module):\n    def __init__(self, config: ModelConfig):\n        super().__init__()\n        \n        self.norm1 = LayerNorm(config.hidden_dim)\n        self.mha = MHA(config)\n        \n        self.norm2 = LayerNorm(config.hidden_dim)\n        self.ffn = FFN(config)\n\n    def forward(self, x: torch.Tensor):\n        \"\"\"\n        x: (batch_size, num_patches, hidden_dim)\n        Returns: (batch_size, num_patches, hidden_dim)\n        \"\"\"\n        # Multi-head attention\n        redisual = x\n        x = self.norm1(x)\n        x = redisual + self.mha(x)\n\n        # Feed-forward network\n        redisual = x\n        x = self.norm2(x)\n        x = x + self.ffn(x)\n\n        return x",
+    "crumbs": [
+      "02 Vision Transformer",
+      "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(**ViT**)"
+    ]
+  },
+  {
+    "objectID": "posts/02-vision-transformer/Vision-Transformer.html#cnn-vs.-vit-inductive-bias",
+    "href": "posts/02-vision-transformer/Vision-Transformer.html#cnn-vs.-vit-inductive-bias",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
+    "section": "1.5 CNN vs. ViT： Inductive bias",
+    "text": "1.5 CNN vs. ViT： Inductive bias\n至此，我们已经介绍完了Vision Transformer，我们来从Inductive Bias 的方面，看看 CNN 和 ViT 有什么不同\n\n\n\n\n\n\n什么是Inductive Bias\n\n\n\n在深度学习里，Inductive Bias（归纳偏置）是指模型在学习之前，因结构或设计而自带的假设或先验。\n\n\n对于图像来说，常见的先验就是：\n\n局部像素是相关的（locality）\n相邻区域的模式有规律（2D neighborhood）\n物体无论出现在图像哪里，识别方式应该一样（translation equivariance）\n\n🔹 2. CNN 的结构怎么体现这些偏置？ 1. 局部性 (Locality) • 卷积核（例如 3×3）只和局部像素打交道，而不是全图。 • 这意味着模型“相信”图像的重要特征来自局部邻域，而不是遥远区域。 2. 二维邻域结构 (2D structure) • 卷积操作是沿着 图像的二维网格进行的，天然利用了图像的行列结构。 • 这和文本（序列 1D）不一样，CNN 明确知道输入是 2D 排列的。 3. 平移等变性 (Translation equivariance) • 卷积核的参数在整张图共享。 • 所以猫在左上角还是右下角，卷积核都能检测到“猫耳朵”。 • 这让 CNN 自动具有“识别位置无关”的能力。\n这些性质不是模型通过训练学出来的，而是因为 卷积操作本身的数学结构就带来的： • kernel 的局部连接 → 局部性 • kernel 滑动覆盖全图 → 平移等变性 • 操作在二维空间定义 → 邻域结构 • 所以，哪怕你不给 CNN 喂太多数据，它也会利用这些偏置去学习特征。\n而对于 ViT 来说： ViT 的归纳偏置非常弱，几乎完全依赖数据和训练来学习。 1. Patch 切分 (Patchification) • ViT 唯一的“图像先验”之一就是把输入图片切成 patch。 • 这一操作隐含了：图像是一个二维结构，可以被分块处理。 2. 位置编码 (Positional Embeddings) • Transformer 本身只处理序列，没有空间结构的概念。 • ViT 通过加位置编码告诉模型 patch 在图像中的相对位置。 • 在输入分辨率变化时，会做 二维插值 (2D interpolation) 来适配，这也是一种人工引入的 2D 先验。 3. 其他部分 • 除了以上两点，ViT 的注意力机制是 全局的 (global)，没有局部性约束。 • 没有像 CNN 那样内置的平移等变性或局部邻域结构。\n这样就是为什么ViT需要更多数据和计算才能学到同样的空间归纳规律。",
+    "crumbs": [
+      "02 Vision Transformer",
+      "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(**ViT**)"
+    ]
+  },
+  {
+    "objectID": "posts/02-vision-transformer/Vision-Transformer.html#vit-model-variants",
+    "href": "posts/02-vision-transformer/Vision-Transformer.html#vit-model-variants",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
+    "section": "1.6 ViT Model Variants",
+    "text": "1.6 ViT Model Variants\nViT 有3种不同的基本变形， 如下图所示 \nViT的名字通常表示为: ViT-L/16: 意思是，ViT-Large，然后用的16 Patch Size。 需要注意的是，Patch Size越大，我们得到的tokens就越少，也就是需要更少的训练时实现。",
+    "crumbs": [
+      "02 Vision Transformer",
+      "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(**ViT**)"
+    ]
+  },
+  {
+    "objectID": "posts/02-vision-transformer/Vision-Transformer.html#减少tokens",
+    "href": "posts/02-vision-transformer/Vision-Transformer.html#减少tokens",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
+    "section": "3.1 减少Tokens",
+    "text": "3.1 减少Tokens\n\nPatch Merge\nPatch Shuffle",
+    "crumbs": [
+      "02 Vision Transformer",
+      "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(**ViT**)"
+    ]
+  },
+  {
+    "objectID": "posts/02-vision-transformer/Vision-Transformer.html#vision-language-model",
+    "href": "posts/02-vision-transformer/Vision-Transformer.html#vision-language-model",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
+    "section": "3.2 Vision Language Model",
+    "text": "3.2 Vision Language Model\n我们以及学习了ViT for computer Vision， Transformer for NLP， 接下来有什么办法让这两种模型结合起来呢？ CLIP (2021): 将 ViT 融合到 vision-language 预训练中。",
+    "crumbs": [
+      "02 Vision Transformer",
+      "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(**ViT**)"
+    ]
+  },
+  {
+    "objectID": "posts/02-vision-transformer/Vision-Transformer.html#axial-attention轴向注意力",
+    "href": "posts/02-vision-transformer/Vision-Transformer.html#axial-attention轴向注意力",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(ViT)",
+    "section": "4.1 Axial Attention（轴向注意力）",
+    "text": "4.1 Axial Attention（轴向注意力）\n在处理 图像或视频 这类高维输入时，如果直接对所有像素做 全局 self-attention，复杂度是 \\(\\mathcal{O}(H^2 W^2)\\) （\\(H, W\\) 是高和宽）。当图像很大时，这个代价太高。 核心想法：把二维 attention 拆成两次一维 attention（沿着图像的两个“轴”分别做）。 1. Row-wise Attention（行注意力） • 沿着水平方向（宽度轴 W）做注意力，每一行的像素互相关注。 • 复杂度：\\(\\mathcal{O}(H \\cdot W^2)\\)。 2. Column-wise Attention（列注意力） • 沿着垂直方向（高度轴 H）做注意力，每一列的像素互相关注。 • 复杂度： \\(\\mathcal{O}(W \\cdot H^2)\\)。\n组合起来，相当于在 H 和 W 两个轴上都做了全局依赖建模。\n\n\n\n\n\n\nFigure 5",
+    "crumbs": [
+      "02 Vision Transformer",
+      "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale(**ViT**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html",
+    "href": "posts/01-transformer/post.html",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "",
+    "text": "Original Paper: Attention is All You Need\nMy Implementation: GitHub Repository\nTransformer Model, as introduced in the paper Attention is all you Need (Vaswani et al. 2023) has revolutionized the field of natural language processing (NLP) and beyond. This architecture is built entirely on attention mechanisms, dispensing with recurrence and convolutions entirely, which allows for greater parallelization and efficiency in training. Nowadays, it has become the backbone of many state-of-the-art models in NLP, computer vision, and other domains. For example, ChatGPT, DeepSeek, and many other large language models (LLMs) are based on the Transformer architecture.\ndoubt, the Transformer paper will be our first paper to read in this series. In this chapter, we will dive deep into this paper, starting with understanding its background and main contributions.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#sec-input-embedding",
+    "href": "posts/01-transformer/post.html#sec-input-embedding",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "1.1 Word Embedding",
+    "text": "1.1 Word Embedding\nWord Embedding is the process of converting tokens into vectors. It is a way of representing words as dense vectors in a continuous vector space. Each word(token) is mapped to a unique vector, and similar words are mapped to similar vectors. This allows the model to capture the semantic meaning of words and their relationships with other words. The Word Embedding is typically learned during the training process of the model.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#sec-positional-encoding",
+    "href": "posts/01-transformer/post.html#sec-positional-encoding",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "1.2 Positional Encoding",
+    "text": "1.2 Positional Encoding\n\nSince our model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence.\n\nOne of the problems with transformer is that the model lack the information of the sequence order. To solve this problem, they add “positional encodings” to the input embeddings. The positional encodings have the same dimension \\(d_\\text{model}\\) as the word embeddings, so that the two can be summed. There are many choices of positional encodings, learned and fixed (sinusoidal). In this transformer, they use sine and cosine functions of different frequencies:\n\\[\n\\begin{split}\nPE_{(pos,2i)} &= sin(pos / 10000^{2i/d_{model}}) \\\\\nPE_{(pos,2i+1)} &= cos(pos / 10000^{2i/d_{model}})\n\\end{split}\n\\tag{1}\\]\nwhere \\(pos\\) is the position and \\(i\\) is the dimension. They chose this function because we hypothesized it would allow the model to easily learn to attend by relative positions, since for any fixed offset \\(k\\), \\(PE_{pos+k}\\) can be represented as a linear function of \\(PE_{pos}\\).\nThe Transformer uses positional encoding to provide unique positional information for each word, enabling the model to capture the relative positional relationships between words in a sequence.\n\n\n\n\n\n\n\n\n\n\n\n(a) Position Encoding with max sequence length 100\n\n\n\n\n\n\n\n\n\n\n\n(b) Position Encoding with max sequence length 100\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) Position Encoding with max sequence length from 100 to 200\n\n\n\n\n\n\n\n\n\n\n\n(d) Position Encoding with log base from 10,000 to 1,000\n\n\n\n\n\n\n\nFigure 2: Illustration of Position Encoding with different max sequence lengths, the horizontal red line represent the encoding at position 50. The encoding is consistent across different max sequence lengths, which allows the model to generalize to longer sequences.\n\n\n\nFrom the Figure 2 , we can see that the positional encoding changes continuously as the max sequence length increases (Figure 2 (c)). And under different max sequence lengths, the positional encoding changes are the same, the Figure 2 (a), Figure 2 (b) show the positional encoding changes at position 50 under different max sequence lengths. We can see that the positional encoding is the same under different max sequence lengths, which allows the model to better generalize to longer sequences.\n\n\n\n\n\n\nFigure 3: Details of Position Encoding\n\n\n\nIn the Figure 3 , we can see the details of different dimensions of the positional encoding. Compared to dimension (4, 5), dimension (6, 7) changes more with position. From the figure, we can see that:\n\nLow \\(i\\) (the earlier dimensions) — short wavelength, changes quickly with position pos → easy to distinguish adjacent tokens;\nHigh \\(i\\) (the later dimensions) — long wavelength, changes slowly with position pos → captures global positional information.\n\nBesides, positional encoding can also achieve different effects by changing the base of the sine and cosine functions. For example, the base can be changed from 10000 to 1000, which shortens the wavelength of the positional encoding and makes it easier for the model to capture information from adjacent positions. Figure Figure 2 (d) shows the changes in positional encoding under different bases.\nCombine with Word Embedding, we can get the final input embedding:",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#sec-multi-head-attention",
+    "href": "posts/01-transformer/post.html#sec-multi-head-attention",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "1.3 Multi-Head Attention",
+    "text": "1.3 Multi-Head Attention\nMulti Head Attention is the core module of the Transformer. Its function is to perform multi-head attention calculations on the input vectors, thereby capturing different semantic information. Attention is essentially a weighted sum process, which can be seen as a weighted average of the input vectors. The core formula is:\n\\[\n\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V\n\\tag{2}\\]\nwhere \\(Q\\)、\\(K\\)、\\(V\\) are the Query, Key, and Value matrices respectively, and \\(\\sqrt{d_k}\\) is a scaling factor used to prevent the dot product values from becoming too large, which could lead to vanishing gradients. The \\(QK^T\\) operation computes the similarity between the query and key vectors, resulting in a score matrix that indicates how much attention each position should pay to every other position. The softmax function is then applied to this score matrix to obtain the attention weights, which are used to compute a weighted sum of the value vectors.\n\n\n\n\n\n\nNote\n\n\n\nEquation 2 is the core formula of Attention, and Attention is the core module of Transformer. Understanding this formula is key to understanding Transformer. Many subsequent innovations, such as Linear Attention (Wang et al. 2020) and Multi-head Latent Attention(MLA)(DeepSeek-AI et al. 2024), are based on improvements to this formula.\n\n\n\nInstead of performing a single attention function with \\(d_\\text{model}\\)-dimensional keys, values and queries, we found it beneficial to linearly project the queries, keys and values \\(h\\) times with different, learned linear projections to \\(d_k\\), \\(d_k\\) and \\(d_v\\) dimensions, respectively.\n\nMulti-Head Attention is an extension of Attention Equation 2 that splits the input vectors into multiple subspaces (heads) and computes attention independently in each subspace. Finally, the outputs of all subspaces are concatenated to obtain the final output. The formula for Multi-Head Attention is:\n\\[\n\\begin{split}\n\\text{MultiHead}(Q, K, V) &= \\text{Concat}(\\text{head}_1, \\ldots, \\text{head}_h)W^O \\\\\n\\text{where}\\ \\text{head}_i &= \\text{Attention}(QW_i^Q, KW_i^K, VW_i^V)\n\\end{split}\n\\tag{3}\\]\nwhere \\(W_i^Q, W_i^K \\in \\mathbb{R}^{d_\\text{model} \\times d_k}, W_i^V \\in \\mathbb{R}^{d_\\text{model} \\times d_v}\\) are weights matrices used to project the input vectors into subspaces, and \\(W^O \\in \\mathbb{R}^{hd_v \\times d_\\text{model} }\\) is a weight matrix used to concatenate the outputs of all subspaces. The purpose of Multi-Head Attention is to capture different semantic information through multiple subspaces, thereby improving the model’s expressive power。\n\nDue to the reduced dimension of each head, the total computational cost is similar to that of single-head attention with full dimensionality.\n\nAs mentioned in the paper, the use of multiple heads allows the model to jointly attend to information from different representation subspaces at different positions. This is particularly useful for capturing complex patterns in the data.\n\n1.3.1 Time Complexity of Multi-Head Attention\nBefore we continue to explore other components, let’s analyze the time complexity of Multi-Head Attention. Assuming the input length is \\(n\\) and the dimension of each head is \\(d_k\\), the time complexity for computing \\(QK^T\\) is \\(\\mathcal{O}(n^2 d_k)\\), this is the standard matrix multiplication complexity.\nNext is the computation of Softmax, which has a time complexity of \\(\\mathcal{O}(n)\\) (wiki). For each row of the score matrix \\(QK^T \\in \\mathbb{R}^{n \\times n}\\), we need to compute softmax, which requires \\(n\\) computations. Therefore, the time complexity of Softmax is \\(\\mathcal{O}(n^2)\\).\nThen comes the weighted sum for the value, which also has a computational complexity of \\(\\mathcal{O}(n^2d)\\).\nThe total time complexity of Multi-Head Attention is the sum of the time complexities of these three steps, which is \\(\\mathcal{O}(n^2d)\\): \\[\n\\begin{array}{|l|l|}\n\\hline\n\\textbf{Step} & \\textbf{Time Complexity} \\\\\n\\hline\nQK^\\top & \\mathcal{O}(n^2 d) \\\\\n\\text{softmax}(QK^\\top) & \\mathcal{O}(n^2) \\\\\n\\text{attention} \\times V & \\mathcal{O}(n^2 d) \\\\\n\\hline\n\\textbf{Total} & \\mathcal{O}(n^2 d) \\\\\n\\hline\n\\end{array}\n\\tag{4}\\]\nHere is the compare of time complexity between Multi-Head Attention, RNN and CNN: \n\n\n1.3.2 Causal Attention\nCausal Attention is a special type of attention mechanism used in the Transformer model, particularly in the decoder part. The purpose of Causal Attention is to prevent the model from seeing future information during training, thereby ensuring the model’s autoregressive property. Specifically, Causal Attention masks future information when computing attention, allowing the model to only attend to current and past information.\nThe formula for Causal Attention is as follows: \\[\n\\text{CausalAttention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}} + M\\right)V\n\\tag{5}\\]\nIn this formula, \\(M\\) is a mask matrix that serves to block out future information. \\(M\\) is an upper triangular matrix where the elements below the diagonal are 0, and the elements above the diagonal are \\(-\\infty\\). This way, when computing the Softmax, the elements above the diagonal are masked out, ensuring that the model can only see current and past information.\n\n\n\n\n\n\nMasking in Transformer\n\n\n\nWhen apply masking in the transformer, there is also a padding mask. The padding mask is used to mask out the padding tokens in the input sequence, which are added to make all sequences in a batch have the same length. The padding mask is a binary matrix where the elements corresponding to padding tokens are 0, and the elements corresponding to non-padding tokens are 1. When computing attention score, we need to apply padding mask and causal mask together causal_mask | padding_mask. The combined mask is obtained by taking the element-wise minimum of the padding mask and the causal mask. This way, we can ensure that the model only attends to valid tokens in the input sequence.\n\n\n\n\n\n\n\n\nFigure 4: Illustration of Attention Mask with Padding mask\n\n\n\n\n\n1.3.3 Cross Attention\nCross Attention is another important attention mechanism used in the Transformer model, particularly in the decoder part. The purpose of Cross Attention is to allow the decoder to attend to the encoder’s output, thereby enabling the model to generate output sequences based on the input sequences. The cross attention has same structure as self-attention Equation 2, but the query comes from the previous decoder layer, and the key and value come from the output of the encoder.\n\n\n\n\n\n\nApplication of Cross Attention\n\n\n\nCross Attention can be applied in various tasks, such as Visual Question Answering (VQA), where the model needs to attend to both image features and question text. By using Cross Attention, the model can effectively integrate information from different modalities, leading to improved performance in tasks that require understanding of both visual and textual information.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#sec-layer-normalization",
+    "href": "posts/01-transformer/post.html#sec-layer-normalization",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "1.4 Layer Normalization",
+    "text": "1.4 Layer Normalization\nLayer Normalization (LayerNorm) is a technique used to normalize the inputs of a neural network layer. It is similar to Batch Normalization, but instead of normalizing across the batch dimension, it normalizes across the feature dimension. This means that for each position in the sequence, LayerNorm computes the mean and variance of the features and normalizes them accordingly.\n\n\n\n\n\n\nFigure 5: Illustration of Layer Normalization and Batch Normalization, where \\(P_i\\) is the position index, \\(i_j\\) is the hidden feature dimension index\n\n\n\nThe formula for Layer Normalization is: \\[\n\\text{LayerNorm}(\\mathrm{x}_i) = \\frac{\\mathrm{x}_i - \\mu_i}{\\sigma_i + \\epsilon} \\cdot \\gamma + \\beta\n\\tag{6}\\]\nwhere \\(\\epsilon\\) is a small constant added to the variance to prevent division by zero, and \\(\\gamma\\) and \\(\\beta\\) are learnable parameters that allow the model to scale and shift the normalized output.\nFor a batch of inputs, Layer Normalization normalizes the vectors at each position Figure 5, rather than normalizing across the entire batch. This allows Layer Normalization to better adapt to sequences of varying lengths, thereby improving model performance. Specifically, for \\(x \\in \\mathbb{R}^{B \\times H \\times S \\times d_v}\\), we normalize along the \\(d_v\\) dimension for each position, rather than normalizing across the entire batch. So, there is no running mean and running variance in LayerNorm, which is different from BatchNorm.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#residual-connection",
+    "href": "posts/01-transformer/post.html#residual-connection",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "1.5 Residual Connection",
+    "text": "1.5 Residual Connection\nResidual Connection, also known as skip connection, is a technique used to improve the training of deep neural networks. It allows the input of a layer to be added directly to the output of the layer, thereby creating a shortcut for the gradient to flow through. This helps to alleviate the problem of vanishing gradients and allows for deeper networks to be trained effectively.\n\n\n\n\n\n\nFigure 6: Illustration of Residual Connection\n\n\n\nThe formula for Residual Connection is: \\[\n\\mathbf{y} = \\text{LayerNorm}(\\mathbf{x} + \\mathrm{Sublayer}(\\mathbf{x}))\n\\tag{7}\\]\nDuring training, the residual connection provides a “shortcut” for the gradient, allowing it to bypass the complex nonlinear transformations of the sub-layer and be directly passed back to the input of the previous layer. This effectively alleviates the problem of vanishing gradients, as shown in the following formula:\n\\[\n\\begin{split}\n\\frac{\\partial \\mathcal{L}}{\\partial \\mathbf{x}}\n&= \\frac{\\partial \\mathcal{L}}{\\partial \\mathbf{y}} \\cdot \\frac{\\partial \\mathbf{y}}{\\partial \\mathbf{x}} \\\\\n&= \\frac{\\partial \\mathcal{L}}{\\partial \\mathbf{y}} \\cdot \\left( \\mathbf{I} + \\frac{\\partial \\mathrm{Sublayer}(\\mathbf{x})}{\\partial \\mathbf{x}} \\right) \\\\\n&= \\underbrace{\\frac{\\partial \\mathcal{L}}{\\partial \\mathbf{y}}}_{\\text{straight path}} +\n\\underbrace{\\frac{\\partial \\mathcal{L}}{\\partial \\mathbf{y}} \\cdot\n\\frac{\\partial\\,\\mathrm{Sublayer}(\\mathbf{x})}{\\partial \\mathbf{x}}}_{\\text{through the sub-layer}}\n\\end{split}\n\\tag{8}\\]\nEquation 8 shows the effect of residual connections on gradients. Here, \\(\\mathcal{L}\\) is the loss function. We can see that due to the presence of the first term, even if the gradient of the sub-layer approaches 0, the information of the gradient will not be completely lost.\n\n\n\n\n\n\nPre-Normalization vs Post-Normalization\n\n\n\nIn the original Transformer, the normalization is placed after the Residual Connection (Post-Normalization) Equation 7 . However, in subsequent research, many models (such as BERT) place the normalization before the Residual Connection (Pre-Normalization). It shows that the pre-normalization can has more stable training process, and no need warm up learning rate (Xiong et al. 2020). The formula for Pre-Normalization is: \\[\n\\text{Output} = \\mathrm{Sublayer}(\\mathbf{x}) + \\mathrm{LayerNorm}(\\mathbf{x})\n\\]",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#sec-point-wise-ffn",
+    "href": "posts/01-transformer/post.html#sec-point-wise-ffn",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "1.6 Point-Wise Feed Forward Network",
+    "text": "1.6 Point-Wise Feed Forward Network\n\nIn addition to attention sub-layers, each of the layers in our encoder and decoder contains a fully connected feed-forward network, which is applied to each position separately and identically.\n\nPoint-Wise Feed Forward Network is used to further process the output of the Multi-Head Attention. It consists of two linear transformations with a ReLU activation in between. The output of the first linear transformation is passed through the ReLU activation function, and then the result is passed through the second linear transformation. The purpose of Point-Wise Feed Forward Network is to introduce non-linearity and increase the model’s capacity to capture complex patterns in the data. It has formula as follows:\n\\[\n\\text{FFN}(x) = \\max(0, xW_1 + b_1)W_2 + b_2\n\\tag{9}\\]\nwhere \\(W_1\\) \\(\\in \\mathbb{R}^{d_\\text{model} \\times d_\\text{ff}}\\) and \\(W_2 \\in \\mathbb{R}^{d_\\text{ff} \\times d_\\text{model}}\\) are weight matrices, and \\(b_1 \\in \\mathbb{R}^{d_\\text{ff}}\\) and \\(b_2 \\in \\mathbb{R}^{d_\\text{model}}\\) are bias terms. The ReLU function is applied element-wise, which introduces non-linearity to the model.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#output-linear-projection-softmax",
+    "href": "posts/01-transformer/post.html#output-linear-projection-softmax",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "1.7 Output Linear Projection & Softmax",
+    "text": "1.7 Output Linear Projection & Softmax\nIn the Transformer model, after the input sequence has been processed by the Encoder and Decoder blocks, the final step is to generate the output sequence. This is done by applying a linear transformation followed by a Softmax function to the output of the Decoder. The purpose of this step is to convert the output vectors into a probability distribution over the vocabulary, allowing the model to predict the next word in the sequence. The formula for this step is as follows: \\[\n\\text{Output} = \\text{Softmax}(xW + b)\n\\tag{10}\\]\nwhere \\(x\\) is the output of the Decoder, and \\(W\\) and \\(b\\) are the weight matrix and bias term of the linear transformation, respectively. The Softmax function is applied to the output of the linear transformation to obtain a probability distribution over the vocabulary.\nThe weight matrix \\(W\\) has a shape of \\(\\mathbb{R}^{d_\\text{model} \\times V}\\), where \\(V\\) is the size of the vocabulary. This means that for each output vector, the linear transformation produces a vector of logits with a length equal to the vocabulary size. The Softmax function then converts these logits into probabilities, which can be interpreted as the likelihood of each word in the vocabulary being the next word in the sequence. And author use weight tying(Press and Wolf 2017) to share the weights between the input embedding of decoder and the output projection, which can reduce the number of parameters and improve the model’s performance.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#full-model",
+    "href": "posts/01-transformer/post.html#full-model",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "1.8 Full Model",
+    "text": "1.8 Full Model\nThe full transformer model is composed of multiple Encoder Blocks and Decoder Blocks, each containing the components we have discussed so far. The full transformer model is illustrated in the figure Figure 1 .\nTransformer的完整模型架构如图 Figure 1 所示。Transformer由多个Encoder Block和Decoder Block组成，每个Encoder Block和Decoder Block都包含了前面介绍的模块。Encoder Block和Decoder Block的结构是相似的，都是由Multi-Head Attention、Point-Wise Feed Forward Network、Layer Normalization和Residual Connection组成的。\n下图是整个Transformer的编码和解码过程的示意图：\n\n\n\n\n\n\n\n\n\n\n\n(a) Transformer Encoding Process\n\n\n\n\n\n\n\n\n\n\n\n(b) Transformer Decoding Process\n\n\n\n\n\n\n\nFigure 7: Illustrate of Transformer Encoding and Decoding Process (Image Source: The Illustrated Transformer)\n\n\n\nAs in the Figure 7 , the encoding process and decoding process of the Transformer are similar. The encoding process converts the input tokens into vectors, then encodes them through multiple Encoder Blocks, and finally converts them into a probability distribution over the vocabulary through a linear transformation and Softmax function. The decoding process, on the other hand, performs cross-attention between the output of the Encoder and the input of the Decoder, then decodes them through multiple Decoder Blocks, and finally converts them into a probability distribution over the vocabulary through a linear transformation and Softmax function.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#dataset-preparation-tokenization",
+    "href": "posts/01-transformer/post.html#dataset-preparation-tokenization",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "2.1 Dataset Preparation & Tokenization",
+    "text": "2.1 Dataset Preparation & Tokenization\nThe dataset we are using is the iwslt2017-en-zh, which is a small dataset for English to Chinese translation. You can download the dataset:\nAfter downloading the dataset, we need to preprocess the data and convert the text data into tokens. We use the Hugging Face Tokenizers library to perform tokenization and encoding. We use Byte Pair Encoding (BPE) to tokenize the input text data. The code is as follows:",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#optimizer-learning-rate-scheduler",
+    "href": "posts/01-transformer/post.html#optimizer-learning-rate-scheduler",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "2.2 Optimizer & Learning Rate Scheduler",
+    "text": "2.2 Optimizer & Learning Rate Scheduler\nWe use the Adam optimizer to optimize the model parameters. The learning rate scheduler is the same as the one used in the original Transformer paper, which is a warm-up learning rate scheduler: \\[\n\\text{lrate} = d_\\text{model}^{-0.5} \\cdot \\min(\\text{step\\_num}^{-0.5}, \\text{step\\_num} \\cdot \\text{warmup\\_steps}^{-1.5})\n\\tag{11}\\]",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#loss-curve",
+    "href": "posts/01-transformer/post.html#loss-curve",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "2.3 Loss Curve",
+    "text": "2.3 Loss Curve\nHere is the Loss Curve after training 10,000 steps: \nCongratulations! You have successfully implemented the Transformer, which is currently the most important AI model framework. By understanding it, you can comprehend most AI models. The popular models like ChatGPT and DeepSeek are all based on variations of the Transformer (we will read about these models in the upcoming articles). The complete code can be found on GitHub.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#question-1",
+    "href": "posts/01-transformer/post.html#question-1",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "4.1 Question 1",
+    "text": "4.1 Question 1\nWhy is the dot product scaled by \\(\\sqrt{d_k}\\)?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nIf not scaled, when \\(d_k\\) is large, the variance of QK also increases, causing the softmax to fall into regions with very small gradients. Dividing by \\(\\sqrt{d_k}\\) helps keep the activation values in a range suitable for training.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#question-2",
+    "href": "posts/01-transformer/post.html#question-2",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "4.2 Question 2",
+    "text": "4.2 Question 2\nWhat problem does Multi-Head Attention solve?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nIt allows the model to attend to information from different representation subspaces at different positions, overcoming the tendency of single-head self-attention to “average out” information.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#question-3",
+    "href": "posts/01-transformer/post.html#question-3",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "4.3 Question 3",
+    "text": "4.3 Question 3\nWhat is the purpose of positional encoding in the Transformer?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nIt provides the model with information about the order of the sequence, enabling it to capture positional relationships between tokens.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "posts/01-transformer/post.html#question-4",
+    "href": "posts/01-transformer/post.html#question-4",
+    "title": "Attention is All You Need(Transformer)",
+    "section": "4.4 Question 4",
+    "text": "4.4 Question 4\nWhat is the time complexity of Multi-Head Attention compare to RNN/CNN?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nThe time complexity of Multi-Head Attention is \\(\\mathcal{O}(n²d)\\), where \\(n\\) is the sequence length and \\(d\\) is the model dimension. In contrast, RNNs have a time complexity of \\(\\mathcal{O}(n)\\) due to their sequential nature, while CNNs require stacking multiple layers to capture long-range dependencies.",
+    "crumbs": [
+      "01 Transformer",
+      "Attention is All You Need(**Transformer**)"
+    ]
+  },
+  {
+    "objectID": "00-how-to-read-paper.html",
+    "href": "00-how-to-read-paper.html",
+    "title": "00: Preparation for Following",
+    "section": "",
+    "text": "在深入学习人工智能相关论文之前，掌握高效且系统的阅读方法至关重要。论文阅读经典指南 How to Read a Paper 中提出了“三遍阅读法”，为我们提供了清晰的实践路径：\n\n\n\n\n第一遍：快速浏览，获取论文的整体结构和核心结论。聚焦于标题（title）、摘要（abstract）、引言（introduction）与结论（conclusion），从宏观上了解文章的研究方向。\n第二遍：细读论文，关注理论推导、实验设置与关键图表。重点理解论文所提出的方法、实验设计、结果分析及其支撑逻辑。\n第三遍：批判性阅读，系统分析论文的优劣，提出建设性问题，反思该方法是否具有通用性或是否能应用于自身研究。\n\n\n\nListing 1: 三遍阅读法\n\n\n\n需要强调的是，阅读论文是一个循环迭代、逐步深入的过程。在反复阅读与思考中，我们会不断修正理解、加深认知。与此同时，通过与他人交流、参与讨论，有助于拓宽视角、深化思考。（本项目网站也因此而生，旨在为研究者们提供一个共同交流学习的平台）\n为提升阅读效率，我们建议在精读阶段，使用颜色标记不同内容。例如在 Harvard CS197 AI Research Experiences 的 Lecture 3 中给出的策略：\n\n黄色：突出论文所试图解决的核心问题或挑战。\n绿色：标记论文中的提到的通用概念。\n粉色：对应提出的算法方法或技术路径。\n橙色：用于标记论文的创新点与贡献。\n\n例如如下示意图：\n\n\n\n\n\n\nFigure 1: Highlight Example of paper (Attention is all you need)\n\n\n\n这套方法并非唯一标准，关键在于构建一套适合自身认知方式的可视化标记体系。统一的标注风格，有助于在后期回顾或跨论文比较时高效定位关键信息。本项目所收录的每篇论文笔记也将采用这一结构化高亮标记方法。",
+    "crumbs": [
+      "00 Preparation for following"
+    ]
+  },
+  {
+    "objectID": "00-how-to-read-paper.html#论文阅读指南",
+    "href": "00-how-to-read-paper.html#论文阅读指南",
+    "title": "00: Preparation for Following",
+    "section": "",
+    "text": "在深入学习人工智能相关论文之前，掌握高效且系统的阅读方法至关重要。论文阅读经典指南 How to Read a Paper 中提出了“三遍阅读法”，为我们提供了清晰的实践路径：\n\n\n\n\n第一遍：快速浏览，获取论文的整体结构和核心结论。聚焦于标题（title）、摘要（abstract）、引言（introduction）与结论（conclusion），从宏观上了解文章的研究方向。\n第二遍：细读论文，关注理论推导、实验设置与关键图表。重点理解论文所提出的方法、实验设计、结果分析及其支撑逻辑。\n第三遍：批判性阅读，系统分析论文的优劣，提出建设性问题，反思该方法是否具有通用性或是否能应用于自身研究。\n\n\n\nListing 1: 三遍阅读法\n\n\n\n需要强调的是，阅读论文是一个循环迭代、逐步深入的过程。在反复阅读与思考中，我们会不断修正理解、加深认知。与此同时，通过与他人交流、参与讨论，有助于拓宽视角、深化思考。（本项目网站也因此而生，旨在为研究者们提供一个共同交流学习的平台）\n为提升阅读效率，我们建议在精读阶段，使用颜色标记不同内容。例如在 Harvard CS197 AI Research Experiences 的 Lecture 3 中给出的策略：\n\n黄色：突出论文所试图解决的核心问题或挑战。\n绿色：标记论文中的提到的通用概念。\n粉色：对应提出的算法方法或技术路径。\n橙色：用于标记论文的创新点与贡献。\n\n例如如下示意图：\n\n\n\n\n\n\nFigure 1: Highlight Example of paper (Attention is all you need)\n\n\n\n这套方法并非唯一标准，关键在于构建一套适合自身认知方式的可视化标记体系。统一的标注风格，有助于在后期回顾或跨论文比较时高效定位关键信息。本项目所收录的每篇论文笔记也将采用这一结构化高亮标记方法。",
+    "crumbs": [
+      "00 Preparation for following"
+    ]
+  },
+  {
+    "objectID": "00-how-to-read-paper.html#工具准备",
+    "href": "00-how-to-read-paper.html#工具准备",
+    "title": "00: Preparation for Following",
+    "section": "2 工具准备",
+    "text": "2 工具准备\n科学阅读离不开合适的工具支撑。以下是推荐的工具体系，涵盖文献管理、笔记整理、代码执行等多个维度。\n\n2.1 文献管理：Zotero\n随着论文积累的增多，系统的文献管理工具不可或缺。Zotero 是一款免费且开源的文献管理平台，支持自动导入、分组管理与多格式引用（如 BibTeX）。其可扩展性极强，支持插件与主题定制。\n\n\n\n\n\n\nFigure 2: Example of Zotero\n\n\n\n推荐插件：\n\nBetter BibTex：增强 BibTeX 导出功能，便于与 LaTeX 无缝集成。\nEthereal Style：为 Zotero 提供美观的 UI 风格，提升使用体验。\n\n尽管 Zotero 存在一定学习曲线，但其长期价值远超初期投入。若仅希望临时阅读，PDF 阅读器亦可；但从科研视角出发，建议尽早投入学习与使用。\n此外，Zotero Chrome Connector 插件可实现一键导入网页文献，极大提升文献收集效率：\n\n\n\n\n\n\nFigure 3: Zotero Chrome Connector\n\n\n\n如 Figure 3 所示，只需点击插件按钮，即可将当前网页内容导入至文献库。\n\n\n2.2 笔记记录：Obsidian\nObsidian 是一款基于 Markdown 的笔记系统，支持双向链接与图谱视图，特别适合用于构建个人知识体系。\n\n\n\n\n\n\nFigure 4: Obsidian Example\n\n\n\n推荐插件：\n\nobsidian-latex-suite：提供 LaTeX 快捷输入与公式预览功能，显著提高数学表达效率。\nHighlightr Plugin：支持自定义高亮颜色，便于分类信息标注。\n\n \n需要注意的是，过度美化界面或插件堆叠可能反而分散注意力。建议以“结构清晰、内容为本”为首要原则。\n对于不使用 Obsidian 的用户，也可选择：\n\n\n\n\n\n\n\n\n\n\n\n(a) Notion Home Page\n\n\n\n\n\n\n\n\n\n\n\n(b) FeiShu Home Page\n\n\n\n\n\n\n\nFigure 5: Home Page of Notion and FeiShu\n\n\n\n\nNotion：如 Figure 5 (a) 所示，适合多人协作与可视化编辑。\n飞书：如 Figure 5 (b) 所示，功能全面，适合企业级文档管理。\n\n\n\n2.3 代码执行：Jupyter Notebook\n在“Paper with Code”理念下，每篇论文将配套 Jupyter Notebook 实现核心算法。其交互式文档特性，使其成为学习与验证代码的理想平台。\n\n\n\n\n\n\nNote\n\n\n\n若对 Jupyter Notebook 不熟悉，推荐参考 官方文档，以快速入门。\n\n\n相应的代码，我会放在GitHub的仓库中\n\n\n\n\n\n\nFigure 6: The preview of GitHub Page\n\n\n\n\n\n2.4 GPU 平台：云端执行环境\n深度学习模型常需 GPU 加速，若本地无 GPU 可使用以下平台：\n\nGoogle Colab：Google 提供的免费云端 Notebook 平台，支持 GPU 与 TPU。\nKaggle Kernels：支持 GPU 的数据科学平台，适合快速实验。\n\n国内可选平台：\n\nAutoDL：适合国内用户，配置简单，支持定制化部署。\n\n其他推荐：\n\nRunPod、Lambda Labs：提供稳定、低延迟的 GPU 训练环境，适合中大型实验任务。\n\n\n通过合理配置上述工具，可以构建出一个系统化、高效的论文学习与研究流程。在接下来的章节中，每篇论文将附带代码实现、结构解析与批判性思考，欢迎共同学习交流。",
+    "crumbs": [
+      "00 Preparation for following"
+    ]
+  },
+  {
+    "objectID": "00-how-to-read-paper.html#总结",
+    "href": "00-how-to-read-paper.html#总结",
+    "title": "00: Preparation for Following",
+    "section": "3 总结",
+    "text": "3 总结\n在本节中，我们介绍了高效阅读论文的方法论与工具体系。通过“三遍阅读法” Listing 1， 我们可以系统地理解论文内容，并在此基础上进行批判性思考。同时，借助 Zotero Section 2.1、ObsidianSection 2.2 等工具，可以有效管理文献、记录笔记与执行代码。 在后续章节中，我们将应用这些方法与工具，深入分析每篇论文的核心思想、实验设计与创新贡献。希望通过本项目的学习，能够帮助大家更好地掌握人工智能领域的前沿研究动态，并在实践中不断提升自己的科研能力。",
+    "crumbs": [
+      "00 Preparation for following"
+    ]
+  }
+]

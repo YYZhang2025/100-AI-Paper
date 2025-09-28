@@ -1,0 +1,14 @@
+---
+title: Attention is All You Need(**Transformer**)
+draft: false
+description: Transformer 是一种基于**自注意力机制**的深度学习架构，能够并行处理序列，在语言、视觉和多模态任务中表现出色，并且作为 GPT、BERT 等大型语言模型（LLM）的核心基础，推动了当今生成式人工智能的快速发展。
+date: 2025-09-26
+date-formt: iso
+categories: [Transformer, MustReadPaper, LLM, NLP, Attention]
+---
+> Self-attention, sometimes called intra-attention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence. Self-attention has been used successfully in a variety of tasks including reading comprehension, abstractive summarization, textual entailment and learning task-independent sentence representations
+> <cite> Attention_is_all_you_need, p.2 </cite>
+THis 
+
+
+
