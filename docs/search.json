@@ -342,5 +342,104 @@
       "03 Swin Transformer",
       "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows(**Swin Transformer**)"
     ]
+  },
+  {
+    "objectID": "posts/05-dino/DINO.html",
+    "href": "posts/05-dino/DINO.html",
+    "title": "Emerging Properties in Self-Supervised Vision Transformers(DINO)",
+    "section": "",
+    "text": "在我们PwC的第二篇，我们学习了什么是Vision Transformer 以及它的基本架构和工作原理。我们还讨论了 ViT 相对于传统卷积神经网络（CNN）的优势和劣势。 但是ViT存在的主要问题是需要大量标注数据：\n我们在训练CIFAR-10 Classification问题时也可以发现，ViT在其准确度只有 55% 左右。 其主要的原因是：ViT 没有 CNN 的 inductive bias（卷积的平移不变性、局部感受野），需要更多标注来“学会”这些先验。\n而DINO (Caron et al. 2021) 的提出，旨在解决“在没有标签数据情况下，训练 Vision Transformer（ViT）提取有区分性、语义丰富的视觉表示”的问题。该方法旨在利用Self-Supervised Learning方式，通过模型自身蒸馏实现有效预训练。\n在我们了解DINO之前，我们需要先了解几个基本概念，以便我们更好的理解DINO。",
+    "crumbs": [
+      "05 Dino",
+      "Emerging Properties in Self-Supervised Vision Transformers(**DINO**)"
+    ]
+  },
+  {
+    "objectID": "posts/05-dino/DINO.html#self-supervised-learningssl",
+    "href": "posts/05-dino/DINO.html#self-supervised-learningssl",
+    "title": "Emerging Properties in Self-Supervised Vision Transformers(DINO)",
+    "section": "1.1 Self-Supervised Learning(SSL)",
+    "text": "1.1 Self-Supervised Learning(SSL)\nSelf-Supervised Learning是一种Un-supervised learning的方法，通过利用未标记数据中的结构信息来进行特征学习。它通常通过设计预文本任务（pretext tasks）来实现。预文本任务指的是：在没有人工标注的情况下，人为设计一个“伪任务”，让模型通过解决这个任务来学习有用的特征表示。举个例子，在 Language Model中，GPT-2(Radford et al., n.d.) 通过预测下一个单词（Next Token Prediction）来学习语言表示，而BERT(Devlin et al. 2019) 通过掩码语言模型任务（Masked Language Modeling）来学习上下文表示。而对于图片，我们可以通过\n\n遮挡图片的区域（Inpainting）， 来进行自监督学习。\n拼图任务（Jigsaw Puzzle）：把图片分割成小块，打乱顺序，让模型重新排列。\n\n\n一句话总结Self-Supervised Learning就是: 让模型先玩一些自带标签的小任务，从而学会理解数据。",
+    "crumbs": [
+      "05 Dino",
+      "Emerging Properties in Self-Supervised Vision Transformers(**DINO**)"
+    ]
+  },
+  {
+    "objectID": "posts/05-dino/DINO.html#knowledge-distillation",
+    "href": "posts/05-dino/DINO.html#knowledge-distillation",
+    "title": "Emerging Properties in Self-Supervised Vision Transformers(DINO)",
+    "section": "1.2 Knowledge Distillation",
+    "text": "1.2 Knowledge Distillation\n知识蒸馏(Hinton, Vinyals, and Dean 2015)是一种模型压缩技术，通过将一个大型模型（教师模型）的知识转移到一个较小的模型（学生模型）中，从而提高学生模型的性能。这两个模型，通常有以下几个特点：\n\nTeacher 模型通常容量大、性能好，但计算开销高。\nStudent 模型较小，但通过学习 Teacher 的知识，可以在低成本下接近 Teacher 的性能。\n\n知识蒸馏核心思想是，Teacher 输出概率分布 (soft targets) 往往包含着比硬标签（Hard Label）更多的信息，比如类间相似性。其损失函数定义为\n\\[\n\\mathcal{L}_{KD} =\n(1-\\lambda)\\,\n\\underbrace{\\mathcal{L}_{CE}(y, p_s)}_{\\text{Hard Label Loss}} +\n\\lambda \\, T^2 \\,\n\\underbrace{\\mathcal{L}_{KL}(p_t^T, p_s^T)}_{\\text{Soft Label Loss}}\n\\tag{1}\\]\n其中：\n\n\\(p_s, p_t\\): 是 student/teacher 的输出概率分布。\n\\(T\\): 是温度参数，用于控制softmax的平滑程度。\n\\(\\lambda\\): 是一个超参数，用于平衡两种损失的贡献。\n\\(\\mathcal{L}_{CE}\\): 是交叉熵损失函数, 用于衡量学生模型输出与真实标签之间的差距。 \\[\n\\mathcal{L}_{CE}(y, p_s) = -\\sum_{i} y_i \\log(p_{s,i})\n\\tag{2}\\]\n\\(\\mathcal{L}_{KL}\\): 是Kullback-Leibler散度损失函数，用于衡量教师模型输出与学生模型输出之间的差距。\n\n\\[\n\\mathcal{L}_{KL}(p_t, p_s) = \\sum_{i} p_t(i) \\log\\frac{p_t(i)}{p_s(i)}\n\\tag{3}\\]\n\nTakeaway 2 知识蒸馏(Knowledge Distillation)是一种模型压缩(Model Compression)方法，通过让小模型（student）学习大模型（teacher）的输出分布，从而继承其知识并提升小模型性能。",
+    "crumbs": [
+      "05 Dino",
+      "Emerging Properties in Self-Supervised Vision Transformers(**DINO**)"
+    ]
+  },
+  {
+    "objectID": "posts/05-dino/DINO.html#exponential-moving-average-ema",
+    "href": "posts/05-dino/DINO.html#exponential-moving-average-ema",
+    "title": "Emerging Properties in Self-Supervised Vision Transformers(DINO)",
+    "section": "1.3 Exponential Moving Average (EMA)",
+    "text": "1.3 Exponential Moving Average (EMA)\n指数移动平均（EMA）是一种 Weight Average 的方法。在DINO中，EMA被用来更新教师网络的参数，使其在训练过程中更加稳定。具体来说，教师网络的参数是学生网络参数的指数加权平均，这样可以避免训练过程中的剧烈波动，从而提高模型的鲁棒性。\n\\[\nx^{\\text{EMA}}_{t+1} = \\alpha x^{\\text{EMA}}_t + (1 - \\alpha) x_{t+1}, \\quad \\text{where} \\ \\alpha \\in [0, 1]\n\\tag{4}\\]\nEMA 通常用来提升模型的generalization能力。\n\nTakeaway 3 指数移动平均(Exponential Moving Average)通过给新数据更高权重、旧数据指数衰减来平滑更新，从而获得更稳定的参数或信号。\n\n有了这些储备知识，接下来让我们看看DINO是如何利用这些知识来训练模型的。",
+    "crumbs": [
+      "05 Dino",
+      "Emerging Properties in Self-Supervised Vision Transformers(**DINO**)"
+    ]
+  },
+  {
+    "objectID": "posts/05-dino/DINO.html#数据处理",
+    "href": "posts/05-dino/DINO.html#数据处理",
+    "title": "Emerging Properties in Self-Supervised Vision Transformers(DINO)",
+    "section": "7.1 数据处理",
+    "text": "7.1 数据处理\nDINO 在数据处理上采用了多视图增强策略。具体来说，对于每一张输入图像，DINO 会生成多个不同的视图，这些视图通过不同的数据增强技术获得，例如随机裁剪、颜色抖动等。这些增强视图将作为 Student 网络的输入。\n同时，Teacher 网络则只使用全局视图，即对整个图像进行一次前向传播，得到全局特征表示。通过这种方式，Student 网络可以学习到更丰富的局部特征，同时也能与 Teacher 网络的全局特征进行对齐。\n\n\n\n对于一张照片，DINO进行以下几个操作：\n\n颜色抖动（Color Jitter）\n高斯模糊（Gaussian Blur）\n太阳化（Solarization）\n\n并且对每个视图，进行Multi-Crop的策略：\n\n生成 两个 global crop（大视野），\n加若干个 local crop（小视野），\n然后所有裁剪视图都输入到 学生网络\n只有 global views 输入到 教师网络\n\n\n\n\n\n\n \n\n\nFigure 2: DINO Image Pre-process Steps\n\n\n\n\n\n\n下面是几个Data Augmentation的例子\n\n\n\n\n\n\n\n\n\n\n\n(a) Original Image\n\n\n\n\n\n\n\n\n\n\n\n(b) Gaussian Blur\n\n\n\n\n\n\n\n\n\n\n\n(c) Solarized\n\n\n\n\n\n\n\nFigure 3: 两个不同的Data Augmentation Examples\n\n\n\nThe full augmentation pipeline\n\n\n\n\n\n\nFigure 4: The Data Augmentation Pipeline",
+    "crumbs": [
+      "05 Dino",
+      "Emerging Properties in Self-Supervised Vision Transformers(**DINO**)"
+    ]
+  },
+  {
+    "objectID": "posts/05-dino/DINO.html#dino-v2",
+    "href": "posts/05-dino/DINO.html#dino-v2",
+    "title": "Emerging Properties in Self-Supervised Vision Transformers(DINO)",
+    "section": "7.2 DINO V2",
+    "text": "7.2 DINO V2\n\n\n\n\n\n\nFigure 5\n\n\n\n• DINO 1：构建基础框架，开启自监督学习在视觉 Transformer 的应用。 • DINO 2：全面扩展训练规模与技术，使模型成为真正“开箱即用”的视觉基础模型。 • DINO 3：进一步提升规模与技术，解决密集特征退化问题，增强多场景适应性，并推动性能至新高度。",
+    "crumbs": [
+      "05 Dino",
+      "Emerging Properties in Self-Supervised Vision Transformers(**DINO**)"
+    ]
+  },
+  {
+    "objectID": "posts/05-dino/DINO.html#dino-v3",
+    "href": "posts/05-dino/DINO.html#dino-v3",
+    "title": "Emerging Properties in Self-Supervised Vision Transformers(DINO)",
+    "section": "7.3 DINO V3",
+    "text": "7.3 DINO V3",
+    "crumbs": [
+      "05 Dino",
+      "Emerging Properties in Self-Supervised Vision Transformers(**DINO**)"
+    ]
+  },
+  {
+    "objectID": "posts/05-dino/DINO.html#dino-v1-vs.-dino-v2-vs.-dino-v3",
+    "href": "posts/05-dino/DINO.html#dino-v1-vs.-dino-v2-vs.-dino-v3",
+    "title": "Emerging Properties in Self-Supervised Vision Transformers(DINO)",
+    "section": "7.4 DINO V1 vs. DINO V2 vs. DINO V3",
+    "text": "7.4 DINO V1 vs. DINO V2 vs. DINO V3\n\n\nSummary of 4 Tokenization Algorithms\n\n\n\n\n\n\n\n\nDINO Version\n核心创新与改进\n数据规模与模型规模\n应用特性与优势\n\n\n\n\nDINO 1\nstudent–teacher 自监督蒸馏，attention 可视化\n中小规模数据与模型\n可视化特征学习、语义分割能力、低成本训练\n\n\nDINO 2\n大规模蒸馏、FlashAttention、正则化、超强泛化能力\n1.42 亿图像训练数据、多个 ViT 架构\n多任务通用，无需微调，任务覆盖广泛\n\n\nDINO 3\nGram anchoring、轴向 RoPE、多分辨率鲁棒、多模型版本\n7B 参数模型 + 超大数据（1.7B 图像）\n更强密集特征质量，多任务性能达新 SOTA，适应性更强\n\n\n\n\n\nQuestion: Answer: 因为缺少 CNN 的 inductive bias，ViT 只能依靠大数据来学习空间不变性和局部模式。\n\n\nAnswer: 利用教师–学生蒸馏 + 图像增强视图，学生模仿教师输出，从而学习鲁棒特征。\n\n\nAnswer: 让学生学习局部与全局的语义对齐，从而获得更丰富的上下文表示。\n\n\nAnswer: ViT 的 self-attention 在自监督中会自然聚合语义一致的区域，从而表现出对象分割现象。\n\n\nCentering prevents one dimension to dominate but encourages collapse to the uniform distribution, while the sharpening has the opposite effect.  Emerging Properties in Self-Supervised Vision Transformers, p.4 \n\n\nOutput sharpening is obtained by using a low value for the temperature τt in the teacher softmax normalization.  Emerging Properties in Self-Supervised Vision Transformers, p.4",
+    "crumbs": [
+      "05 Dino",
+      "Emerging Properties in Self-Supervised Vision Transformers(**DINO**)"
+    ]
+  },
+  {
+    "objectID": "posts/05-dino/DINO.html#safe-softmax",
+    "href": "posts/05-dino/DINO.html#safe-softmax",
+    "title": "Emerging Properties in Self-Supervised Vision Transformers(DINO)",
+    "section": "8.1 Safe-Softmax",
+    "text": "8.1 Safe-Softmax\ndef softmax(x: torch.Tensor, temp):\n    max =",
+    "crumbs": [
+      "05 Dino",
+      "Emerging Properties in Self-Supervised Vision Transformers(**DINO**)"
+    ]
   }
 ]
